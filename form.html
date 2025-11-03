@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form</title>
+    <link rel="stylesheet" href="htmltut.css">
+</head>
+<body>
+    <div><h1 id="head">Forms</h1></div>
+    <div>
+    <pre>
+Forms are one of the important elements of HTML. When you want to gather some information from a visitor to your site, you have to use an 
+HTML form. The complexity of torm depends on the purpose for which it is created. Some forms are quite complex such as the form you fill for 
+booking airline tickets or to apply online for some scholarship etc. Others can be simple such as a search box is a simple form for finding some text 
+on the webpage.
+The forms you fill online resemble the paper forms you fill for various purposes. These forms contain the spaces to enter text, boxes for selecting 
+an appropriate option etc. You can create a form using HTML  &lt;FORM> tag. It consist of various elements known as form controls like textboxes,
+ textarea, checkboxes, radio buttons, drop down menu etc. to collect various type of information from visitors.
+Some common examples of forms are:
+Reservation forms
+Online order and payment forms
+• Registration and Contact forms
+• Surveys and market research forms
+Feedback forms
+• Scholarship forms
+Email Sign Up and Sign In forms
+• Employment application forms
+To define a form &lt;FORM> tag is used. It is a paired tag where the opening &lt;FORM> tag indicates the start of the form and the closing &lt;/FORM> 
+tag represents the end of the form.
+All the form elements are enclosed between these two tags. You can also use HTML tags inside the &lt;FORM> tag such as &lt;H1> for headings, 
+&lt;UL> for defining unordered lists etc.
+    </pre>
+</div>
+<div>
+    <pre>
+ATTRIBUTES OF FORM ELEMENTS
+
+The &lt;form> tag consists of two mandatory attributes and some optional attributes. The two compulsory attributes of ‹form> tag are Action and
+ Method.
+• ACTION: This attribute specifies the URL of the web page that will open when the visitor clicks on the submit button. The address can be either
+ a script name that will process the form or an email address that is specified using "mailto." keyword.
+For example -
+‹form action = "register.asp">
+‹form action=mailto:inderpreet.kaur@gmail.com>
+In the first example, when the user clicks the submit button, the form's values are redirected to the page register.asp that will process these values 
+whereas in the second example, these values are mailed to the specified email id.
+• METHOD: This attribute is used to specify how the data will be sent from client to web server when submit button is clicked. There are two
+ ways to submit the data :
+• GET Method: It is the default method for sending data back to the web server.
+When this method is used, the information that you submit in the form will be attached to the end of the URL of the page specified in the action 
+method. It captures the data from various fields of the form, encodes this information to a URL which points to a web page. It is used when you 
+have little data to send back to the server as the maximum amount of data that can be sent is 2048 bytes.
+POST Method: It is used when there is large amount of data that is to be sent back to the server. It captures the data from the various fields 
+of form and sends it as a separate bit stream of data through the HTTP header. Thus the data is not seen in the URL.
+    </pre>
+</div>
+<div>
+    <h2 id="heading">Form Controls</h2>
+    <p>
+        There are a number of form controls available that can be used to collect information from the user. They are:
+        <ul>
+            <li>Text box</li>
+            <li>Radio Button</li>
+            <li>Check box</li>
+            <li>Drop down menu</li>
+            <li>Text area</li>
+            <li>Submit Button</li>
+            <li>Reset Button</li>
+        </ul>
+    </p>
+    <pre>
+INPUT ELEMENT
+The input element is used to insert various controls in the form such as text boxes, password boxes, checkboxes, radio buttons etc. The input 
+element is applied in the forms using ‹INPUT> tag. The various attributes used in the input tag are:
+• Type: It is used to define the type of fields to be created. The values that this attribute can take are text, password, radio, checkbox, submit and 
+   reset.
+    </pre>
+    <center><table border="1px">
+        <th height="50px" width="100px">Value</th>
+        <th width="250px">Description</th>
+        <tr>
+            <td>text</td>
+            <td>Defines a single line text field.</td>
+        </tr>
+        <tr>
+            <td>password</td>
+            <td>Defines password field.</td>
+        </tr>
+        <tr>
+            <td>checkbox</td>
+            <td>Defines a checkbox.</td>
+        </tr>
+        <tr>
+            <td>radio</td>
+            <td>Defines a radio button.</td>
+        </tr>
+    </table></center>
+</div>
+</body>
+</html>

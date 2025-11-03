@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form valid</title>
+    <style>
+         .ho {
+            background-color: rgb(232, 224, 213);
+            padding: 10px;
+            border-radius: 20px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div style="box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);">
+        <h2 align="center" style=" padding-top: 10px;
+        padding-left: 15px;
+        color: rgb(106, 106, 106); padding-bottom: 10px;">JS-Form Validation</h2>
+    </div>
+    <div class="ho">
+        <ul>
+            <br>
+            <br> →One of the main features of JavaScript is to check if the form is valid or not.
+            <br> →For example: checking if a required field is left empty or not.
+        </ul>
+    </div>
+    <div class="ho">
+        <ul>
+            <h2>
+                <br>Step 2: define a JavaScript function in head section and associate this function with the form:
+            </h2>
+            <br> i.e. this JavaScript function should be checked whenever the user clicks on the submit. →Note: this
+            function must either return true (when no validation error) or return false (when any
+            <br> validation error).
+            <br> →we must call this function only like this:
+            <br> <b> &lt;form action=”” name=”” onsubmit=”return function_name()”&gt; </b>
+            <br> →Note: onsubmit is an event where we call a function to execute when the submit button of <br>that
+            <br> form is pressed.
+        </ul>
+    </div>
+    <div class="ho">
+        <ul>
+         <br>   <h2> Step 3: code the function:</h2>
+         <br>   →Syntax to access the value of a form element:
+         <br>   <b>document.form_name.input_type_name.value</b>
+          <br>  →Syntax to check if form element is empty:
+         <br>   <b>
+         <br>       if(document.form_name.input_type_name.value == “”)
+         <br>       {
+         <br>       →Display error message
+         <br>       →return false value
+         <br>       return false;
+         <br>       }
+            </b>
+        </ul>
+    </div>
+</body>
+
+</html>

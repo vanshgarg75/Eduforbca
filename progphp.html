@@ -1,0 +1,1387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PHP Programs</title>
+<style>
+/* ------------------------- */
+/* 🔹 Global Reset & Theme */
+/* ------------------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary: #808080; /* grey tone */
+  --accent: #c0c0c0;  /* lighter grey accent */
+  --bg-dark: #f5f5f5; /* background grey */
+  --bg-gradient: linear-gradient(180deg, #ffffff, #e0e0e0); /* simple white-grey */
+  --text-light: #333333;
+  --text-muted: #555555;
+  --border-glow: rgba(0, 0, 0, 0.1);
+  --transition: all 0.3s ease;
+  --font-main: 'Poppins', 'Segoe UI', sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-main);
+  background: var(--bg-gradient);
+  color: var(--text-light);
+  overflow-x: hidden;
+  display: flex;
+  min-height: 100vh;
+}
+
+/* ------------------------- */
+/* 🔹 Sidebar Navigation */
+/* ------------------------- */
+.navbar {
+  width: 210px;
+  background: #ffffff;
+  padding: 30px 20px;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  height: 100vh;
+  border-right: 1px solid #cccccc;
+  box-shadow: 3px 0 15px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  z-index: 100;
+  transition: var(--transition);
+}
+
+.navlist {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.navlist a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  font-size: 16px;
+  padding: 12px 15px;
+  border-radius: 10px;
+  display: block;
+  transition: var(--transition);
+  position: relative;
+}
+
+.navlist a:hover {
+  color: #000;
+  background: #f0f0f0;
+  transform: translateX(5px);
+}
+
+/* ------------------------- */
+/* 🔹 Main Content Area */
+/* ------------------------- */
+.main-content {
+  flex-grow: 1;
+  margin-left: 10px;
+  padding: 50px 40px;
+  min-height: 100vh;
+  transition: var(--transition);
+  background-color: #fafafa;
+}
+
+/* Section Box */
+.box-main {
+  border: 1px solid #ccc;
+  padding: 30px 25px;
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.08);
+  backdrop-filter: blur(5px);
+  overflow-x: auto;
+}
+
+/* Titles */
+h1 {
+  font-size: 34px;
+  margin-bottom: 30px;
+  text-align: center;
+  color: #333;
+  letter-spacing: 1px;
+}
+
+/* ------------------------- */
+/* 🔹 Program Grid */
+/* ------------------------- */
+.program-grid {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  gap: 12px;
+  margin-bottom: 30px;
+}
+
+.program-grid a {
+  background: #f9f9f9;
+  padding: 10px;
+  text-align: center;
+  border-radius: 8px;
+  text-decoration: none;
+  color: #333;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  transition: var(--transition);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.program-grid a:hover {
+  background: #e0e0e0;
+  color: #000;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* ------------------------- */
+/* 🔹 Program Section */
+/* ------------------------- */
+.program-section {
+  margin-top: 40px;
+  border-top: 1px solid #ccc;
+  padding-top: 25px;
+  background: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+}
+
+.program-section h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #444;
+  font-weight: 600;
+}
+
+/* Code Box */
+.code-box {
+  background: #f0f0f0;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 18px;
+  font-family: 'Courier New', monospace;
+  color: #000;
+  overflow-x: auto;
+  white-space: pre-wrap;
+  margin-bottom: 25px;
+}
+
+/* Output Box */
+.output-box {
+  background: #ffffff;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 18px;
+  margin-bottom: 40px;
+}
+
+.output-box h3 {
+  color: #444;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.output-box p {
+  color: #333;
+  font-weight: 500;
+}
+
+/* ------------------------- */
+/* 🔹 Footer */
+/* ------------------------- */
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  background: #ffffff;
+  border-top: 1px solid #ccc;
+  color: #666;
+  padding: 12px 0;
+  font-size: 14px;
+  box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.05);
+  backdrop-filter: blur(4px);
+  z-index: 1000;
+  transition: var(--transition);
+}
+
+footer:hover {
+  color: #000;
+}
+
+/* ------------------------- */
+/* 🔹 Back-to-Top Button */
+/* ------------------------- */
+#backToTop {
+  position: fixed;
+  bottom: 90px;
+  right: 35px;
+  background: #888;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  padding: 14px 17px;
+  font-size: 22px;
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  transition: var(--transition);
+  display: none;
+  z-index: 1100;
+}
+
+#backToTop:hover {
+  transform: translateY(-4px) scale(1.05);
+  background: #666;
+}
+
+/* ------------------------- */
+/* 🔹 Responsive Design */
+/* ------------------------- */
+@media (max-width: 1400px) {
+  .program-grid {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+@media (max-width: 900px) {
+  .navbar {
+    width: 100%;
+    height: auto;
+    flex-direction: row;
+    justify-content: center;
+    padding: 15px;
+    border-right: none;
+    border-bottom: 1px solid #ccc;
+    position: fixed;
+    top: 0;
+    left: 0;
+  }
+
+  .navlist {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .main-content {
+    margin-left: 0;
+    padding: 100px 20px 40px;
+  }
+
+  .program-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  footer {
+    font-size: 13px;
+  }
+}
+
+</style>
+</head>
+<body>
+<!-- Main Content -->
+ <section class="main-content">
+        <div class="box-main">
+            <h1>PHP Programs</h1>
+            <div class="program-grid">
+                <a href="#prog1">1. Subtract Two Numbers</a>
+                <a href="#prog2">2. Area of Rectangle</a>
+                <a href="#prog3">3. Simple Interest</a>
+                <a href="#prog4">4. Celsius to Fahrenheit</a>
+                <a href="#prog5">5. Convert Days to Years</a>
+                <a href="#prog6">6. Swap Two Numbers</a>
+                <a href="#prog7">7. Even or Odd</a>
+                <a href="#prog8">8. Biggest of Three Numbers</a>
+                <a href="#prog9">9. Smallest of Three Numbers</a>
+                <a href="#prog10">10. Sum of Digits</a>
+
+                <a href="#prog11">11. Prime Numbers</a>
+                <a href="#prog12">12. Multiplication Table</a>
+                <a href="#prog13">13. Random Numbers</a>
+                <a href="#prog14">14. Factorial</a>
+                <a href="#prog15">15. Fibonacci Series</a>
+                <a href="#prog16">16. Armstrong Number</a>
+                <a href="#prog17">17. Alphabet Triangle</a>
+                <a href="#prog18">18. Number Triangle 1</a>
+                <a href="#prog19">19. Number Triangle 2</a>
+                <a href="#prog20">20. Number Triangle 3</a>
+
+                <a href="#prog21">21. Number Triangle 4</a>
+                <a href="#prog22">22. Star Triangle</a>
+                <a href="#prog23">23. Cube of Number (Function)</a>
+                <a href="#prog24">24. Sum & Difference (Function)</a>
+                <a href="#prog25">25. Palindrome (Function)</a>
+                <a href="#prog26">26. Sum of First 10 Natural Numbers (Function)</a>
+                <a href="#prog27">27. Recursive Numbers</a>
+                <a href="#prog28">28. Recursive Factorial</a>
+                <a href="#prog29">29. Recursive Fibonacci</a>
+                <a href="#prog30">30. Count Characters</a>
+
+                <a href="#prog31">31. Count Characters (No Spaces)</a>
+                <a href="#prog32">32. Reverse String</a>
+                <a href="#prog33">33. Count Vowels</a>
+                <a href="#prog34">34. Remove Spaces</a>
+                <a href="#prog35">35. Replace Case</a>
+                <a href="#prog36">36. Palindrome String</a>
+                <a href="#prog37">37. Print Array (foreach)</a>
+                <a href="#prog38">38. Count Array Elements</a>
+                <a href="#prog39">39. Max & Min in Array</a>
+                <a href="#prog40">40. Reverse Array</a>
+            </div>
+
+             <div class="program-section" id="prog1">
+                <h2>Program 1: Subtract Two Numbers</h2>
+                <div class="code-box">
+<pre>
+&lt;?php
+// PHP program to subtract two numbers
+
+// Define two numbers
+$num1 = 15;
+$num2 = 8;
+
+// Subtract the numbers
+$subtraction = $num1 - $num2;
+
+// Display the result
+echo "The subtraction of $num1 and $num2 is: $subtraction";
+?&gt;
+</pre>
+                </div>
+
+                <div class="output-box">
+                    <h3>Output:</h3>
+                    <p>The subtraction of 15 and 8 is: 7</p>
+                </div>
+            </div>
+
+            <!-- Program 2 -->
+            <div class="program-section" id="prog2">
+                <h2>Program 2: Area of Rectangle</h2>
+                <div class="code-box">
+<pre>
+&lt;?php
+// PHP program to find the area of a rectangle
+
+$length = 10; // length of rectangle
+$width = 5;   // width of rectangle
+
+$area = $length * $width; // formula: area = length × width
+
+echo "The area of the rectangle is: $area";
+?&gt;
+
+<!-- 
+    OUTPUT
+The area of the rectangle is: 50
+-->
+</pre>
+                </div>
+
+                <div class="output-box">
+                    <h3>Output:</h3>
+                    <p>The area of the rectangle is: 50</p>
+                </div>
+            </div>
+            <!-- Program 3 -->
+<div class="program-section" id="prog3">
+    <h2>Program 3: Compute Simple Interest</h2>
+
+    <div class="code-box">
+        <pre>
+&lt;?php
+// PHP program to compute Simple Interest
+
+$principal = 10000; // Principal amount
+$rate = 5;          // Rate of interest in %
+$time = 2;          // Time in years
+
+// Formula: Simple Interest = (P × R × T) / 100
+$simple_interest = ($principal * $rate * $time) / 100;
+
+echo "The Simple Interest is: $simple_interest";
+?&gt;
+
+<!-- 
+    OUTPUT
+The Simple Interest is: 1000
+-->
+        </pre>
+    </div>
+
+    <div class="output-box">
+        <h3>Output:</h3>
+        <p>The Simple Interest is: 1000</p>
+    </div>
+</div>
+<!-- Program 4 -->
+<div class="program-section" id="prog4">
+    <h2>Program 4: Convert Celsius to Fahrenheit</h2>
+
+    <div class="code-box">
+        <pre>
+&lt;?php
+// Program to convert Celsius to Fahrenheit
+
+$celsius = 25;  // temperature in Celsius
+$fahrenheit = ($celsius * 9/5) + 32;
+
+echo "Temperature in Celsius: $celsius °C&lt;br&gt;";
+echo "Temperature in Fahrenheit: $fahrenheit °F";
+?&gt;
+
+<!-- 
+    OUTPUT
+Temperature in Celsius: 25 °C
+Temperature in Fahrenheit: 77 °F
+-->
+        </pre>
+    </div>
+
+    <div class="output-box">
+        <h3>Output:</h3>
+        <p>Temperature in Celsius: 25 °C</p>
+        <p>Temperature in Fahrenheit: 77 °F</p>
+    </div>
+</div>
+<!-- Program 5 -->
+<div class="program-section" id="prog5">
+    <h2>Program 5: Convert Days to Years</h2>
+
+    <div class="code-box">
+        <pre>
+&lt;?php
+// Program to convert days into years
+
+$days = 730;
+$years = $days / 365;
+
+echo "$days days = $years years";
+?&gt;
+
+<!-- 
+    OUTPUT
+730 days = 2 years
+-->
+        </pre>
+    </div>
+
+    <div class="output-box">
+        <h3>Output:</h3>
+        <p>730 days = 2 years</p>
+    </div>
+</div>
+<!-- Program 6 -->
+<div class="program-section" id="prog6">
+    <h2>Program 6: Swap Two Numbers</h2>
+
+    <div class="code-box">
+        <pre>
+&lt;?php
+// Program to swap two numbers without using a third variable
+
+$a = 10;
+$b = 20;
+
+echo "Before swapping: a = $a, b = $b&lt;br&gt;";
+
+$a = $a + $b;
+$b = $a - $b;
+$a = $a - $b;
+
+echo "After swapping: a = $a, b = $b";
+?&gt;
+
+<!-- 
+    OUTPUT
+Before swapping: a = 10, b = 20
+After swapping: a = 20, b = 10
+-->
+        </pre>
+    </div>
+
+    <div class="output-box">
+        <h3>Output:</h3>
+        <p>Before swapping: a = 10, b = 20<br>After swapping: a = 20, b = 10</p>
+    </div>
+</div>
+<!-- Program 7 -->
+<div class="program-section" id="prog7">
+    <h2>Program 7: Even or Odd</h2>
+
+    <div class="code-box">
+        <pre>
+&lt;?php
+// Program to check whether a number is even or odd
+
+$number = 7;
+
+if ($number % 2 == 0) {
+    echo "$number is Even";
+} else {
+    echo "$number is Odd";
+}
+?&gt;
+
+<!-- 
+    OUTPUT
+7 is Odd
+-->
+        </pre>
+    </div>
+
+    <div class="output-box">
+        <h3>Output:</h3>
+        <p>7 is Odd</p>
+    </div>
+</div>
+<!-- Program 8 -->
+<div class="program-section" id="prog8">
+    <h2>Program 8: Biggest of Three Numbers</h2>
+
+    <div class="code-box">
+        <pre>
+&lt;?php
+// Program to find the biggest of three numbers
+
+$a = 15;
+$b = 8;
+$c = 20;
+
+if ($a >= $b && $a >= $c)
+    echo "$a is the biggest number";
+elseif ($b >= $a && $b >= $c)
+    echo "$b is the biggest number";
+else
+    echo "$c is the biggest number";
+?&gt;
+
+<!-- 
+OUTPUT
+20 is the biggest number
+-->
+        </pre>
+    </div>
+
+    <div class="output-box">
+        <h3>Output:</h3>
+        <p>20 is the biggest number</p>
+    </div>
+</div>
+
+<!-- Program 9 -->
+<div class="program-section" id="prog9">
+    <h2>Program 9: Smallest of Three Numbers</h2>
+
+    <div class="code-box">
+        <pre>
+&lt;?php
+// Program to find the smallest of three numbers
+
+$a = 15;
+$b = 8;
+$c = 20;
+
+if ($a <= $b && $a <= $c)
+    echo "$a is the smallest number";
+elseif ($b <= $a && $b <= $c)
+    echo "$b is the smallest number";
+else
+    echo "$c is the smallest number";
+?&gt;
+
+<!-- 
+OUTPUT
+8 is the smallest number
+-->
+        </pre>
+    </div>
+
+    <div class="output-box">
+        <h3>Output:</h3>
+        <p>8 is the smallest number</p>
+    </div>
+</div>
+
+<!-- Program 10 -->
+<div class="program-section" id="prog10">
+    <h2>Program 10: Sum of Digits</h2>
+
+    <div class="code-box">
+        <pre>
+&lt;?php
+// Program to show the sum of digits of 12345
+
+$number = 12345;
+$sum = 0;
+$temp = $number;
+
+while ($temp != 0) {
+    $digit = $temp % 10;
+    $sum += $digit;
+    $temp = intval($temp / 10);
+}
+
+echo "The sum of digits of $number is: $sum";
+?&gt;
+
+<!-- 
+OUTPUT
+The sum of digits of 12345 is: 15
+-->
+        </pre>
+    </div>
+
+    <div class="output-box">
+        <h3>Output:</h3>
+        <p>The sum of digits of 12345 is: 15</p>
+    </div>
+</div>
+<!-- Program 11: First 15 Prime Numbers -->
+<div class="program-section" id="prog11">
+    <h2>Program 11: First 15 Prime Numbers</h2>
+    <div class="code-box">
+<pre>&lt;?php
+$count = 0;
+$num = 2;
+echo "First 15 prime numbers are: &lt;br&gt;";
+while ($count &lt; 15) {
+    $isPrime = true;
+    for ($i = 2; $i &lt;= sqrt($num); $i++) {
+        if ($num % $i == 0) {
+            $isPrime = false;
+            break;
+        }
+    }
+    if ($isPrime) {
+        echo $num . " ";
+        $count++;
+    }
+    $num++;
+}
+?&gt;</pre>
+    </div>
+    <div class="output-box">
+        <h3>Output:</h3>
+        <p>2 3 5 7 11 13 17 19 23 29 31 37 41 43 47</p>
+    </div>
+</div>
+
+<!-- Program 12: Multiplication Table -->
+<div class="program-section" id="prog12">
+    <h2>Program 12: Multiplication Table</h2>
+    <div class="code-box">
+<pre>&lt;?php
+$number = 7;
+echo "Multiplication Table of $number:&lt;br&gt;";
+for ($i = 1; $i &lt;= 10; $i++) {
+    $result = $number * $i;
+    echo "$number x $i = $result &lt;br&gt;";
+}
+?&gt;</pre>
+    </div>
+    <div class="output-box">
+        <h3>Output:</h3>
+        <p>
+7 x 1 = 7<br>
+7 x 2 = 14<br>
+7 x 3 = 21<br>
+7 x 4 = 28<br>
+7 x 5 = 35<br>
+7 x 6 = 42<br>
+7 x 7 = 49<br>
+7 x 8 = 56<br>
+7 x 9 = 63<br>
+7 x 10 = 70
+        </p>
+    </div>
+</div>
+
+<!-- Program 13: Ten Random Numbers -->
+<div class="program-section" id="prog13">
+    <h2>Program 13: Ten Random Numbers</h2>
+    <div class="code-box">
+<pre>&lt;?php
+echo "Ten random numbers between 10 and 100 are: &lt;br&gt;";
+for ($i = 1; $i &lt;= 10; $i++) {
+    $randomNumber = rand(10, 100);
+    echo $randomNumber . "&lt;br&gt;";
+}
+?&gt;</pre>
+    </div>
+    <div class="output-box">
+        <h3>Output:</h3>
+        <p>Example Output: 37 82 15 99 43 68 22 90 57 11</p>
+    </div>
+</div>
+
+<!-- Program 14: Factorial -->
+<div class="program-section" id="prog14">
+    <h2>Program 14: Factorial</h2>
+    <div class="code-box">
+<pre>&lt;?php
+$number = 5;
+$factorial = 1;
+for ($i = 1; $i &lt;= $number; $i++) {
+    $factorial *= $i;
+}
+echo "Factorial of $number is: $factorial";
+?&gt;</pre>
+    </div>
+    <div class="output-box">
+        <h3>Output:</h3>
+        <p>Factorial of 5 is: 120</p>
+    </div>
+</div>
+
+<!-- Program 15: Fibonacci Series -->
+<div class="program-section" id="prog15">
+    <h2>Program 15: Fibonacci Series</h2>
+    <div class="code-box">
+<pre>&lt;?php
+$n1 = 0;
+$n2 = 1;
+echo "First 12 numbers of Fibonacci series: &lt;br&gt;";
+echo "$n1 $n2 ";
+for ($i = 3; $i &lt;= 12; $i++) {
+    $n3 = $n1 + $n2;
+    echo "$n3 ";
+    $n1 = $n2;
+    $n2 = $n3;
+}
+?&gt;</pre>
+    </div>
+    <div class="output-box">
+        <h3>Output:</h3>
+        <p>0 1 1 2 3 5 8 13 21 34 55 89</p>
+    </div>
+</div>
+
+<!-- Program 16: Armstrong Number -->
+<div class="program-section" id="prog16">
+    <h2>Program 16: Armstrong Number</h2>
+    <div class="code-box">
+<pre>&lt;?php
+$number = 153;
+$sum = 0;
+$temp = $number;
+while ($temp != 0) {
+    $digit = $temp % 10;
+    $sum += $digit * $digit * $digit;
+    $temp = (int)($temp / 10);
+}
+if ($sum == $number) {
+    echo "$number is an Armstrong number.";
+} else {
+    echo "$number is not an Armstrong number.";
+}
+?&gt;</pre>
+    </div>
+    <div class="output-box">
+        <h3>Output:</h3>
+        <p>153 is an Armstrong number.</p>
+    </div>
+</div>
+
+<!-- Program 17: Alphabet Triangle -->
+<div class="program-section" id="prog17">
+    <h2>Program 17: Alphabet Triangle</h2>
+    <div class="code-box">
+<pre>&lt;?php
+$letter = 'A';
+for ($i = 5; $i &gt;= 1; $i--) {
+    for ($j = 1; $j &lt;= $i; $j++) {
+        echo $letter;
+    }
+    echo "&lt;br&gt;";
+    $letter++;
+}
+?&gt;</pre>
+    </div>
+    <div class="output-box">
+        <h3>Output:</h3>
+        <p>
+AAAAA<br>
+BBBB<br>
+CCC<br>
+DD<br>
+E
+        </p>
+    </div>
+</div>
+
+<!-- Program 18: Number Triangle 1 -->
+<div class="program-section" id="prog18">
+    <h2>Program 18: Number Triangle 1</h2>
+    <div class="code-box">
+<pre>&lt;?php
+for ($i = 1; $i &lt;= 5; $i++) {
+    for ($j = 1; $j &lt;= $i; $j++) {
+        echo $j;
+    }
+    echo "&lt;br&gt;";
+}
+?&gt;</pre>
+    </div>
+    <div class="output-box">
+        <h3>Output:</h3>
+        <p>
+1<br>
+12<br>
+123<br>
+1234<br>
+12345
+        </p>
+    </div>
+</div>
+
+<!-- Program 19: Number Triangle 2 -->
+<div class="program-section" id="prog19">
+    <h2>Program 19: Number Triangle 2</h2>
+    <div class="code-box">
+<pre>&lt;?php
+for ($i = 1; $i &lt;= 5; $i++) {
+    for ($j = 1; $j &lt;= $i; $j++) {
+        echo "1";
+    }
+    echo "&lt;br&gt;";
+}
+?&gt;</pre>
+    </div>
+    <div class="output-box">
+        <h3>Output:</h3>
+        <p>
+1<br>
+11<br>
+111<br>
+1111<br>
+11111
+        </p>
+    </div>
+</div>
+
+<!-- Program 20: Number Triangle 3 -->
+<div class="program-section" id="prog20">
+    <h2>Program 20: Number Triangle 3</h2>
+    <div class="code-box">
+<pre>&lt;?php
+for ($i = 5; $i &gt;= 1; $i--) {
+    for ($j = $i; $j &gt;= 1; $j--) {
+        echo $j;
+    }
+    echo "&lt;br&gt;";
+}
+?&gt;</pre>
+    </div>
+    <div class="output-box">
+        <h3>Output:</h3>
+        <p>
+54321<br>
+4321<br>
+321<br>
+21<br>
+1
+        </p>
+    </div>
+</div>
+<!-- Program 21: Number Triangle -->
+<div class="program-section" id="prog21">
+    <h2>Program 21: Number Triangle</h2>
+    <div class="code-box">
+<pre>&lt;?php
+for ($i = 5; $i &gt;= 1; $i--) {
+    for ($j = 1; $j &lt;= $i; $j++) {
+        echo $i;
+        if ($j &lt; $i) { echo " "; }
+    }
+    echo PHP_EOL;
+}
+?&gt;</pre>
+    </div>
+    <div class="output-box">
+        <h3>Output:</h3>
+        <p>
+5 5 5 5 5<br>
+4 4 4 4<br>
+3 3 3<br>
+2 2<br>
+1
+        </p>
+    </div>
+</div>
+
+<!-- Program 22: Star Triangle -->
+<div class="program-section" id="prog22">
+    <h2>Program 22: Star Triangle</h2>
+    <div class="code-box">
+<pre>&lt;?php
+for ($i = 1; $i &lt;= 5; $i++) {
+    for ($j = 1; $j &lt;= $i; $j++) {
+        echo "*";
+        if ($j &lt; $i) { echo " "; }
+    }
+    echo PHP_EOL;
+}
+for ($i = 4; $i &gt;= 1; $i--) {
+    for ($j = 1; $j &lt;= $i; $j++) {
+        echo "*";
+        if ($j &lt; $i) { echo " "; }
+    }
+    echo PHP_EOL;
+}
+?&gt;</pre>
+    </div>
+    <div class="output-box">
+        <h3>Output:</h3>
+        <p>
+*<br>
+* *<br>
+* * *<br>
+* * * *<br>
+* * * * *<br>
+* * * *<br>
+* * *<br>
+* *<br>
+*
+        </p>
+    </div>
+</div>
+
+<!-- Program 23: Cube of a Number -->
+<div class="program-section" id="prog23">
+    <h2>Program 23: Cube of a Number</h2>
+    <div class="code-box">
+<pre>&lt;?php
+function findCube($number) {
+    return $number * $number * $number;
+}
+$num = 4;
+$result = findCube($num);
+echo "The cube of $num is $result" . PHP_EOL;
+$num2 = 3;
+$result2 = findCube($num2);
+echo "The cube of $num2 is $result2" . PHP_EOL;
+?&gt;</pre>
+    </div>
+    <div class="output-box">
+        <h3>Output:</h3>
+        <p>
+The cube of 4 is 64<br>
+The cube of 3 is 27
+        </p>
+    </div>
+</div>
+
+<!-- Program 24: Sum and Difference -->
+<div class="program-section" id="prog24">
+    <h2>Program 24: Sum and Difference of Two Numbers</h2>
+    <div class="code-box">
+<pre>&lt;?php
+function findSumAndDifference($a, $b) {
+    echo "The sum of $a and $b is: " . ($a + $b) . PHP_EOL;
+    echo "The difference of $a and $b is: " . ($a - $b) . PHP_EOL;
+}
+$num1 = 15;
+$num2 = 7;
+findSumAndDifference($num1, $num2);
+?&gt;</pre>
+    </div>
+    <div class="output-box">
+        <h3>Output:</h3>
+        <p>
+The sum of 15 and 7 is: 22<br>
+The difference of 15 and 7 is: 8
+        </p>
+    </div>
+</div>
+
+<!-- Program 25: Palindrome Check -->
+<div class="program-section" id="prog25">
+    <h2>Program 25: Check Palindrome</h2>
+    <div class="code-box">
+<pre>&lt;?php
+function isPalindrome($num) {
+    $original = $num;
+    $reverse = 0;
+    while ($num &gt; 0) {
+        $reverse = ($reverse * 10) + ($num % 10);
+        $num = (int)($num / 10);
+    }
+    return $original == $reverse;
+}
+$number1 = 121;
+echo $number1 . (isPalindrome($number1) ? " is a palindrome." : " is not a palindrome.") . PHP_EOL;
+$number2 = 456;
+echo $number2 . (isPalindrome($number2) ? " is a palindrome." : " is not a palindrome.") . PHP_EOL;
+?&gt;</pre>
+    </div>
+    <div class="output-box">
+        <h3>Output:</h3>
+        <p>
+121 is a palindrome.<br>
+456 is not a palindrome.
+        </p>
+    </div>
+</div>
+
+<!-- Program 26: Sum of First 10 Natural Numbers -->
+<div class="program-section" id="prog26">
+    <h2>Program 26: Sum of First 10 Natural Numbers</h2>
+    <div class="code-box">
+<pre>&lt;?php
+function sumFirstTenNatural() {
+    $sum = 0;
+    for ($i = 1; $i &lt;= 10; $i++) { $sum += $i; }
+    return $sum;
+}
+echo "The sum of the first 10 natural numbers is: " . sumFirstTenNatural() . PHP_EOL;
+?&gt;</pre>
+    </div>
+    <div class="output-box">
+        <h3>Output:</h3>
+        <p>
+The sum of the first 10 natural numbers is: 55
+        </p>
+    </div>
+</div>
+
+<!-- Program 27: First Five Natural Numbers (Recursive) -->
+<div class="program-section" id="prog27">
+    <h2>Program 27: First 5 Natural Numbers (Recursive)</h2>
+    <div class="code-box">
+<pre>&lt;?php
+function printNatural($n) {
+    if ($n &gt; 5) return;
+    echo $n . PHP_EOL;
+    printNatural($n + 1);
+}
+echo "The first 5 natural numbers are:" . PHP_EOL;
+printNatural(1);
+?&gt;</pre>
+    </div>
+    <div class="output-box">
+        <h3>Output:</h3>
+        <p>
+The first 5 natural numbers are:<br>
+1<br>
+2<br>
+3<br>
+4<br>
+5
+        </p>
+    </div>
+</div>
+
+<!-- Program 28: Factorial Using Recursive Function -->
+<div class="program-section" id="prog28">
+    <h2>Program 28: Factorial (Recursive)</h2>
+    <div class="code-box">
+<pre>&lt;?php
+function factorial($n) {
+    if ($n == 0 || $n == 1) return 1;
+    else return $n * factorial($n - 1);
+}
+$number = 5;
+echo "The factorial of $number is: " . factorial($number) . PHP_EOL;
+$number2 = 7;
+echo "The factorial of $number2 is: " . factorial($number2) . PHP_EOL;
+?&gt;</pre>
+    </div>
+    <div class="output-box">
+        <h3>Output:</h3>
+        <p>
+The factorial of 5 is: 120<br>
+The factorial of 7 is: 5040
+        </p>
+    </div>
+</div>
+
+<!-- Program 29: Fibonacci Series (Recursive) -->
+<div class="program-section" id="prog29">
+    <h2>Program 29: Fibonacci Series (Recursive)</h2>
+    <div class="code-box">
+<pre>&lt;?php
+function fibonacci($n) {
+    if ($n == 0) return 0;
+    else if ($n == 1) return 1;
+    else return fibonacci($n - 1) + fibonacci($n - 2);
+}
+$count = 12;
+echo "The first $count numbers of the Fibonacci series are:" . PHP_EOL;
+for ($i = 0; $i &lt; $count; $i++) {
+    echo fibonacci($i) . ($i &lt; $count - 1 ? " " : "");
+}
+echo PHP_EOL;
+?&gt;</pre>
+    </div>
+    <div class="output-box">
+        <h3>Output:</h3>
+        <p>
+The first 12 numbers of the Fibonacci series are:<br>
+0 1 1 2 3 5 8 13 21 34 55 89
+        </p>
+    </div>
+</div>
+
+<!-- Program 30: Count Characters in String -->
+<div class="program-section" id="prog30">
+    <h2>Program 30: Count Characters in String</h2>
+    <div class="code-box">
+<pre>&lt;?php
+$string = "Hello World!";
+echo "The string: '$string'" . PHP_EOL;
+echo "Total number of characters: " . strlen($string) . PHP_EOL;
+$string2 = "PHP Programming";
+echo PHP_EOL;
+echo "The string: '$string2'" . PHP_EOL;
+echo "Total number of characters: " . strlen($string2) . PHP_EOL;
+?&gt;</pre>
+    </div>
+    <div class="output-box">
+        <h3>Output:</h3>
+        <p>
+The string: 'Hello World!'<br>
+Total number of characters: 12<br><br>
+The string: 'PHP Programming'<br>
+Total number of characters: 15
+        </p>
+    </div>
+</div>
+<!-- Program 31: Count Characters Excluding Spaces -->
+<div class="program-section" id="prog31">
+    <h2>Program 31: Count Characters Excluding Spaces</h2>
+    <div class="code-box">
+<pre>&lt;?php
+$input = "Hello World! Welcome to PHP.";
+$noSpaces = str_replace(' ', '', $input);
+$charCount = strlen($noSpaces);
+echo "Total number of characters (excluding spaces): " . $charCount;
+?&gt;</pre>
+    </div>
+    <div class="output-box">
+        <h3>Output:</h3>
+        <p>Total number of characters (excluding spaces): 28</p>
+    </div>
+</div>
+
+<!-- Program 32: Reverse String -->
+<div class="program-section" id="prog32">
+    <h2>Program 32: Reverse String</h2>
+    <div class="code-box">
+<pre>&lt;?php
+$input = "Hello PHP";
+$reversed = "";
+$length = strlen($input);
+for ($i = $length - 1; $i &gt;= 0; $i--) {
+    $reversed .= $input[$i];
+}
+echo "Original String: " . $input . "\n";
+echo "Reversed String: " . $reversed;
+?&gt;</pre>
+    </div>
+    <div class="output-box">
+        <h3>Output:</h3>
+        <p>Original String: Hello PHP<br>Reversed String: PHP olleH</p>
+    </div>
+</div>
+
+<!-- Program 33: Count Vowels in String -->
+<div class="program-section" id="prog33">
+    <h2>Program 33: Count Vowels in String</h2>
+    <div class="code-box">
+<pre>&lt;?php
+$input = "Hello PHP World";
+$noSpaces = str_replace(' ', '', $input);
+$lowercase = strtolower($noSpaces);
+$vowelCount = 0;
+$vowels = ['a', 'e', 'i', 'o', 'u'];
+for ($i = 0; $i &lt; strlen($lowercase); $i++) {
+    if (in_array($lowercase[$i], $vowels)) {
+        $vowelCount++;
+    }
+}
+echo "Total number of vowels (excluding spaces): " . $vowelCount;
+?&gt;</pre>
+    </div>
+    <div class="output-box">
+        <h3>Output:</h3>
+        <p>Total number of vowels (excluding spaces): 4</p>
+    </div>
+</div>
+
+<!-- Program 34: Remove Spaces from String -->
+<div class="program-section" id="prog34">
+    <h2>Program 34: Remove Spaces from String</h2>
+    <div class="code-box">
+<pre>&lt;?php
+$input = "Remove all blank spaces";
+$noSpaces = str_replace(' ', '', $input);
+echo "Original String: " . $input . "\n";
+echo "String without spaces: " . $noSpaces;
+?&gt;</pre>
+    </div>
+    <div class="output-box">
+        <h3>Output:</h3>
+        <p>Original String: Remove all blank spaces<br>String without spaces: Removeallblankspaces</p>
+    </div>
+</div>
+
+<!-- Program 35: Convert String to Lowercase -->
+<div class="program-section" id="prog35">
+    <h2>Program 35: Convert String to Lowercase</h2>
+    <div class="code-box">
+<pre>&lt;?php
+$input = "HeLLo WoRLd! PHP Is AwEsOmE";
+$lowercase = strtolower($input);
+echo "Original String: " . $input . "\n";
+echo "Lowercase String: " . $lowercase;
+?&gt;</pre>
+    </div>
+    <div class="output-box">
+        <h3>Output:</h3>
+        <p>Original String: HeLLo WoRLd! PHP Is AwEsOmE<br>Lowercase String: hello world! php is awesome</p>
+    </div>
+</div>
+
+<!-- Program 36: Check Palindrome String -->
+<div class="program-section" id="prog36">
+    <h2>Program 36: Check Palindrome String</h2>
+    <div class="code-box">
+<pre>&lt;?php
+$input = "madam";
+$reversed = "";
+for ($i = strlen($input) - 1; $i &gt;= 0; $i--) {
+    $reversed .= $input[$i];
+}
+if ($input === $reversed) {
+    echo "$input is a Palindrome";
+} else {
+    echo "$input is not a Palindrome";
+}
+?&gt;</pre>
+    </div>
+    <div class="output-box">
+        <h3>Output:</h3>
+        <p>madam is a Palindrome</p>
+    </div>
+</div>
+
+<!-- Program 37: Display Array Elements -->
+<div class="program-section" id="prog37">
+    <h2>Program 37: Display Array Elements</h2>
+    <div class="code-box">
+<pre>&lt;?php
+$colors = ["Red", "Green", "Blue", "Yellow"];
+foreach ($colors as $color) {
+    echo $color . "&lt;br&gt;";
+}
+?&gt;</pre>
+    </div>
+    <div class="output-box">
+        <h3>Output:</h3>
+        <p>Red<br>Green<br>Blue<br>Yellow</p>
+    </div>
+</div>
+
+<!-- Program 38: Count Array Elements -->
+<div class="program-section" id="prog38">
+    <h2>Program 38: Count Array Elements</h2>
+    <div class="code-box">
+<pre>&lt;?php
+$items = ["Apple", "Banana", "Cherry", "Date"];
+$count = count($items);
+echo "Total elements: " . $count;
+?&gt;</pre>
+    </div>
+    <div class="output-box">
+        <h3>Output:</h3>
+        <p>Total elements: 4</p>
+    </div>
+</div>
+
+<!-- Program 39: Maximum and Minimum in Array -->
+<div class="program-section" id="prog39">
+    <h2>Program 39: Maximum and Minimum in Array</h2>
+    <div class="code-box">
+<pre>&lt;?php
+$numbers = [12, 45, 7, 89, 23];
+$max = max($numbers);
+$min = min($numbers);
+echo "Maximum: $max&lt;br&gt;";
+echo "Minimum: $min";
+?&gt;</pre>
+    </div>
+    <div class="output-box">
+        <h3>Output:</h3>
+        <p>Maximum: 89<br>Minimum: 7</p>
+    </div>
+</div>
+
+<!-- Program 40: Reverse Array -->
+<div class="program-section" id="prog40">
+    <h2>Program 40: Reverse Array</h2>
+    <div class="code-box">
+<pre>&lt;?php
+$fruits = ["Mango", "Apple", "Orange", "Grapes"];
+$reversed = array_reverse($fruits);
+foreach ($reversed as $fruit) {
+    echo $fruit . "&lt;br&gt;";
+}
+?&gt;</pre>
+    </div>
+    <div class="output-box">
+        <h3>Output:</h3>
+        <p>Grapes<br>Orange<br>Apple<br>Mango</p>
+    </div>
+</div>
+
+
+        </div>
+    </section>
+</div>
+
+<!-- Footer -->
+<footer>
+    <p>© 2025 PHP Project | Created by Vasu Dev</p>
+</footer>
+<!-- Back-to-Top Button -->
+<button id="backToTop" title="Back to Top">&#8679;</button>
+
+<footer>
+    <p>© 2025 PHP Project | Created by Vasu Dev</p>
+</footer>
+
+<script>
+// Show button after scrolling 200px
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+    const btn = document.getElementById("backToTop");
+    if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+        btn.style.display = "block";
+    } else {
+        btn.style.display = "none";
+    }
+}
+
+// Scroll back to top on click
+document.getElementById("backToTop").addEventListener("click", function(){
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+</script>
+
+</body>
+</html>

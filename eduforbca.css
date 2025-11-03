@@ -1,0 +1,102 @@
+#logo{
+    margin-left: 550px;
+}
+.navbar ul{
+    list-style-type: none;
+    background-color: hsl(0,0%,25%);
+    padding: 0px;
+    margin: 0px;
+    overflow: hidden; 
+}
+.navbar a{
+    color: white;
+    text-decoration: none;
+    padding: 15px;
+    display: block;
+    text-align: center;
+    font-size: larger;
+    
+}
+.navbar a:hover{
+    background-color: hsl(0, 0%, 10%) ;
+}
+.navbar li{
+    float: left;
+
+}
+h1{
+    text-align: center;
+}
+.divs{
+    background-color: rgb(192, 238, 254);
+    border-radius: 30px;
+    padding: 20px;
+    margin-bottom: 20px;
+    line-height: 1.5;
+    letter-spacing: 1px;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+.icon{
+    width: 40px;
+}
+.navbar1 ul{
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+}
+.navbar1 a{
+    text-decoration: none;
+    float: left;
+    display: block;
+}
+.navbar1 li{
+    float: left;
+    margin-left: 20px;
+    padding: 0%;
+    
+}
+.navbar1 :hover{
+    background-color: rgb(60, 60, 60);
+}
+#p-1{
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: larger;
+    
+}
+#aboutus{
+    padding: 20px;
+    line-height: 1.5;
+    letter-spacing: 1px;
+    margin: 0;
+}
+#li-social
+{
+    margin-left: 600px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+    margin-top: 7px;
+    font-weight: bold;
+}
+#li-social:hover
+{
+    background-color: white;
+}
+#contactus{
+    margin-top: 10px;
+}
+#aboutus{
+    margin-top: 20px;
+    border: 2px;
+}
+.about{
+    background-color:rgb(192, 238, 254);
+    padding: 20px;
+    line-height: 1.5;
+    letter-spacing: 1px;
+    margin: 0;
+    border-radius: 30px;
+}

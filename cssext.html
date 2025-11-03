@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>External CSS</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        h2 {
+            color: #333;
+            text-align: center;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            letter-spacing: 1px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div style="box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);">
+        <h2 align="center" style=" padding-top: 10px;
+        padding-left: 15px;
+        color: rgb(106, 106, 106); padding-bottom: 10px;">External CSS</h2>
+    </div>
+    <div style="box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5); padding: 20px;">
+        <ul>
+            <li>Here, we do not define the CSS styling inside a web page.</li>
+            <li>It is done on a separate (.css) file.</li>
+            <li>We cannot run this file, we can only import this file in an HTML file.</li>
+            <li>Main benefit is reusability of styles across the website (in multiple web pages of the website).</li>
+            <li>Step 3. Import the .css file inside the &lt;head&gt; tag of HTML file:</li>
+            <pre>
+            &lt;head&gt;
+                &lt;link rel="stylesheet" type="text/css" href="cssfilename.css"/&gt;
+            &lt;/head&gt;
+        </pre>
+            <li>After this step, we can normally use the CSS classes & styles.</li>
+        </ul>
+    </div>
+</body>
+
+</html>

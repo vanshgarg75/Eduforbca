@@ -1,0 +1,52 @@
+.login h1{
+    font-size: 403x;
+    font-family: 'Times New Roman', Times, serif;
+    margin-left: 105px;
+}
+.login {
+    margin-top: 200px;
+    margin-left: 600px;
+    width: 300px;
+    padding: 20px;
+    background-color:white;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+
+}
+#email{
+    margin-left: 65px;
+}
+#pass{
+    margin-left: 65px;
+    margin-top: 20px;
+}
+body{
+    background-image: url(loginback.jpg);
+    background-repeat: no-repeat;
+    background-size:cover;
+}
+#submit:hover
+{
+    background-color: rgb(171, 171, 171);
+}
+#submit{
+    margin-left: 63px;
+    border-radius: 15px;
+    width: 175px;
+    height: 30px;
+    background-color: lightgray;
+    font-size: medium;
+}
+#submit:hover
+{
+    background-color: lightgreen;
+}
+#signup{
+    font-size: small;
+    text-decoration: none;
+    color: black;
+    margin-left: 65px;
+}
+#signup:hover
+{
+    color: blue;
+}

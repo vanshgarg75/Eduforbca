@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>image</title>
+    <link rel="stylesheet" href="htmltut.css">
+</head>
+<body>
+    <div>
+        <h1 id="head">Image Tag</h1>
+    </div>
+    <div>
+        <pre>
+→singular tag
+→used to display images on a web page.
+    &lt;img/> tag attributes:
+->src: give the name and the location of the image with the file extension.
+Note: we give the relative path of the image (w.r.t the root of the website)
+Note: we can also give the url (image link) from the web.
+Format: “image_folder/image_name.extension”
+->width: width of the image in pixels
+->height: height of image in pixels
+->alt: alternate text. this is the text that will be displayed when the image is not shown.
+->align: image alignment w.r.t. other content.
+top bottom middle left right
+->hspace: space in px to be inserted on the left and the right side of the image
+->vspace: space in px to be inserted on the top and the bottom side of the image
+
+→Steps to work with images in HTML:
+Step 1: Create a folder for storing images inside the website folder.
+Generally, we call this folder: images
+Step 2: Copy the images inside the images folder.
+Step 3: render the image on the webpage using the &lt;img /> tag
+→Note:
+→every image has an aspect ratio. width:height
+→If you want to maintain the aspect ratio and don't want to stretch the image then give
+only one attribute out of width and height.
+        </pre>
+        <center><img src="logo.jpg" alt="logo"
+        title="EduForBca" border="2px"></center>
+    </div>
+</body>
+</html>

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jsbuiltfunction</title>
+    <style>
+        .ho
+        {
+            background-color: rgb(232, 224, 213);
+            padding: 10px;
+            border-radius: 20px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div style="box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);">
+        <h2 align="center" style=" padding-top: 10px;
+        padding-left: 15px;
+        color: rgb(106, 106, 106); padding-bottom: 10px;">JS-Array Functions</h2>
+    </div>
+    <div class="ho">
+        <ul>
+            <br>
+            <br> <b> toString(): </b>
+            <br> →converts an array to a string of comma separated values.
+            <br> →Syntax:
+            <br> <b> string_var = array_var.toString();</b>
+        </ul>
+    </div>
+    <div class="ho">
+        <ul>
+            <br> <b> join():</b>
+            <br> →this function combines all the array elements into a string.
+            <br> →here, we can decide the separator.
+            <br> →Syntax:
+            <br> <b> string_var = array_var.join(“separator”);</b>
+        </ul>
+    </div>
+    <div class="ho">
+        <ul>
+            <b> pop():</b>
+            <br> →this function is used to remove the last item from an array.
+            <br> →Syntax:
+            <br> <b> var removed_item = array_var.pop();</b>
+        </ul>
+    </div>
+    <div class="ho">
+        <ul>
+            <br> <b> push():</b>
+            <br> →this function adds a new item to the end of the array.
+            <br> →after inserting the item, this function gives us the new updated length of the array.
+            <br> →Syntax:
+            <br> <b> var new_length_var = array_var.push(item);</b>
+        </ul>
+    </div>
+    <div class="ho">
+        <ul>
+            <b> shift(): </b>
+            →this function removes the 1st item of the array and shifts all the other items to 1 position less.
+            →Syntax:
+            <b> var removed_item = array_var.shift(); </b>
+        </ul>
+    </div>
+    <div class="ho">
+        <ul>
+            <br> <b> unshift(): </b>
+            <br> →this function adds a new item to the beginning of the array.
+            <br> →after inserting the item, this function gives us the new updated length of the array.
+            <br> →Syntax:
+            <br> <b> var new_length_var = array_var.unshift(item); </b>
+        </ul>
+    </div>
+    <div class="ho">
+        <ul>
+            <br> <b> delete: </b>
+            <br> →using this we can delete any item from the array.
+            <br> →Syntax:
+            <br> <b> delete array_var[index];</b>
+            <br> →This will leave a hole in the array at that position.
+        </ul>
+    </div>
+    <div class="ho">
+        <br>
+        <ul>
+            <br> <b> splice() {to add new items in the array}:</b>
+            <br> →Syntax:
+            <br> <b> array_var.splice(insertion_index , no_of_items_to_be_removed , item1, item2, item3);</b>
+            <br> →insertion_index: is the index of the array element where the new items need to be added.
+            <br> →no_of_items_to_be_removed: how many items should be removed.
+        </ul>
+    </div>
+    <div class="ho">
+        <ul>
+            <br> <b> sort() : </b>
+            <br> →Sorts the contents of the array in ascending order.
+            <br> →Syntax:
+            <br> <b> var new_sorted_array = array.sort();</b>
+            <br> →After sorting, a new array is returned.
+        </ul>
+    </div>
+    <div class="ho">
+        <ul>
+            <br> <b> reverse(): </b>
+            <br> →this function reverses the elements of the array.
+            <br> →Syntax:
+            <br> <b> var new_reversed_array = array.reverse(); </b>
+            <br> →This returns a new reversed array.
+        </ul>
+    </div>
+    <div class="ho">
+        <ul>
+            <br> <b> concat(): </b>
+            <br> →this function is used to concatenate an array at the end of another array.
+            <br> →Join at end.
+            <br> →Syntax:
+            <br> <b> var result_array = array_1.concat(array_2); </b>
+            <br> →returns the new array that has array_1 + array_2 elements.
+            <br> →array_2 will be added at the end of array_1.
+        </ul>
+    </div>
+    <div class="ho">
+        <ul>
+            <br> <b> indexOf(): </b>
+            <br> →this function is a search function.
+            <br> →This function searches for an item in the array.
+            <br> →when item is found, it returns the index of that item.
+            <br> →when item is not found, it returns -1.
+            <br> →syntax:
+            <br> <b> var item_index = array.indexOf(item); </b>
+        </ul>
+    </div>
+    <div class="ho">
+        <ul>
+   <br>        <b> filter(): </b>
+ <br>           →this function is used to apply a user defined / predefined function on an array’s elements.
+ <br>           →filter() creates a new array filled with elements that all pass a test that is provided by a function.
+  <br>          →filter() returns a new array.
+   <br>         →filter() does not change the original array value.
+    <br>        →Syntax:
+     <br>    <b> new_array_variable = array_variable.filter( function_name ); </b>
+        </ul>
+    </div>
+</body>
+
+</html>

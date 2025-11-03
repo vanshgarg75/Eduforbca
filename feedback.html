@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #333;
+        }
+
+        form {
+            text-align: left;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #555;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        input[type="radio"],
+        input[type="checkbox"] {
+            margin-right: 5px;
+            margin-top: 5px;
+            float: left;
+        }
+
+        select {
+            width: calc(100% - 22px);
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        textarea {
+            height: 150px;
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 20px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Feedback Form</h2>
+        <form action="feedback.php" method="POST">
+    <label for="name">Name</label>
+    <input type="text" id="name" name="name" placeholder="Enter your Name" required>
+
+    <label for="email">Email</label>
+    <input type="email" id="email" name="email" placeholder="Enter your Email" required>
+
+    <label>Gender:</label>
+    <input type="radio" id="male" name="gender" value="Male"> <label for="male">Male</label>
+    <input type="radio" id="female" name="gender" value="Female"> <label for="female">Female</label>
+    <input type="radio" id="other" name="gender" value="Other"> <label for="other">Other</label>
+
+    <label>Tutorials Learnt:</label>
+    <input type="checkbox" id="html" name="tutorials[]" value="HTML"> <label for="html">HTML</label>
+    <input type="checkbox" id="css" name="tutorials[]" value="CSS"> <label for="css">CSS</label>
+    <input type="checkbox" id="js" name="tutorials[]" value="JS"> <label for="js">JS</label>
+    <input type="checkbox" id="java" name="tutorials[]" value="JAVA"> <label for="java">JAVA</label>
+    <input type="checkbox" id="php" name="tutorials[]" value="PHP"> <label for="php">PHP</label>
+
+    <label for="year">Year:</label>
+    <select name="year" id="year">
+        <option value="1st Year">1st Year</option>
+        <option value="2nd Year">2nd Year</option>
+        <option value="3rd Year">3rd Year</option>
+    </select>
+
+    <label for="Feedback">Feedback:</label>
+    <textarea name="feedback" id="Feedback" placeholder="Enter your feedback..." required></textarea>
+
+    <input type="submit" value="Submit">
+</form>
+
+    </div>
+</body>
+
+</html>

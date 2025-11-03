@@ -1,0 +1,65 @@
+#head{
+    font-size: 40px;
+    font-family: 'Times New Roman', Times, serif;
+    margin-right: 20px;
+}
+.signup {
+    margin-top: 200px;
+    margin-left: 600px;
+    width: 300px;
+    padding: 20px;
+    background-color:white;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+label{
+    font-family:'Times New Roman', Times, serif;
+}
+#fname
+{
+    margin-left: 55px;
+}
+#email{
+    margin-left: 55px;
+    margin-top: 20px;
+}
+#pass{
+    margin-left: 55px;
+    margin-top: 20px;
+}
+#mobile
+{
+    margin-top: 20px;
+    margin-left: 55px;
+}
+#lname
+{
+    margin-top: 20px;
+    margin-left: 55px;
+}
+body{
+    background-image: url(loginback.jpg);
+    background-repeat: no-repeat;
+    background-size:cover;
+}
+#submit:hover
+{
+    background-color: lightgreen;
+}
+#submit{
+    margin-left: 53px;
+    border-radius: 15px;
+    width: 175px;
+    height: 30px;
+    background-color: lightgray;
+    font-size: medium;
+}
+#signup{
+    font-size: small;
+    text-decoration: none;
+    color: black;
+    margin-left: 55px;
+}
+#signup:hover
+{
+    color: blue;
+}

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Internal CSS</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+      h2 { 
+            color: #333;
+            text-align: center;
+        }
+        ul
+        {
+             list-style-type: none;
+        }
+        code {
+            color: #c7254e;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <div style="box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);">
+            <h2 align="center" style=" padding-top: 10px;
+            padding-left: 15px;
+            color: rgb(106, 106, 106); padding-bottom: 10px;">Internal CSS:</h2>
+        </div> 
+        <div style="box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5); padding: 20px;">
+        <li>Different ways to apply CSS on HTML tags</li>
+        <li>Inline CSS</li>
+        <li>Internal CSS</li>
+        <li>External CSS</li>
+        <li class="note">Here, we can give the style in the head instead of on the tag.</li>
+        <pre>
+            &lt;head&gt;
+            &lt;style type="text/css"&gt; 
+            .classname 
+            { 
+                css_style_attribute: value; 
+                css_style_attribute: value; 
+                css_style_attribute: value; 
+            } 
+            &lt;/style&gt; 
+            &lt;/head&gt; 
+        </pre>  
+        <li class="note">Note: This creates your own custom style which you can later apply on any tag.</li>
+        <pre>
+            &lt;tag class="<code>classname</code>"&gt;
+        </pre>
+        <li class="note">Applying CSS on specific tags with specific ids:</li>
+        <pre>
+            &lt;head&gt; 
+            &lt;style type="text/css"&gt; 
+            #tag_id 
+            { 
+                css_style_attribute: value; 
+                css_style_attribute: value; 
+                css_style_attribute: value; 
+            } 
+            &lt;/style&gt; 
+            &lt;/head&gt; 
+        </pre>  
+        <li class="note">Note: This style gets auto set on any tag with that id:</li>
+        <pre>
+            &lt;tag id="<code>tag_id</code>"&gt; 
+        </pre>
+        <li class="note">Applying CSS on all occurrences of a tag:</li>
+        <pre>
+            &lt;head&gt; 
+            &lt;style type="text/css"&gt; 
+            &lt; Tag_Name&gt; 
+            { 
+                css_style_attribute: value; 
+                css_style_attribute: value; 
+                css_style_attribute: value; 
+            } 
+            &lt;/style&gt; 
+            &lt;/head&gt; 
+        </pre>
+        <li class="note">Note: This style gets auto set on any tag in the web page:</li>
+        <pre>
+            &lt;tag&gt;
+        </pre>
+        </div>
+    </ul>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frames</title>
+    <link rel="stylesheet" href="htmltut.css">
+</head>
+
+<body>
+    <div>
+        <h1 id="head">Frames</h1>
+    </div>
+    <div>
+        <h2 id="heading">Features of Frames</h2>
+        <pre>
+1. Frames open up navigational possibilities, and they can be used to unity information from several sites onto one page.
+2. Frames have one portion of the window always visible while others scroll through longer content.
+3. Frames can divide the browser window horizontally as well as vertically.
+4. You can display tables, links, forms, images through frames.
+5. You can use frames as showing index links in one sub-region and their corresponding pages in the other sub-region. By this, index will never go 
+    out of sight while browsing the document.
+A frameset divides the window into rows and columns like tables. The simplest of framesets might just divide the screen into two rows, whereas a 
+complex frameset could use several rows and columns. There is also a special kind of frame called an frame which is a single window that can sit 
+anywhere inside a page.
+        </pre>
+    </div>
+    <div>
+        <pre>
+HOW FRAMES WORK <br>
+When you view a page with frames in a browser, you are actually looking at several HTML documents at once. Actually a web page with frames is 
+a frameset document, which is an HTML document and in which each frame is drawn in such a way that a HTML document is displayed in each 
+frame. When the browser sees that this is a frameset document, it draws out the frames as instructed in the document and then pulls the separate 
+HTML documents.
+There are three tags for the implementation of frames in the HTML document. Let's have a brief introduction to them. However, we will discuss 
+them in detail in next sections.
+1. ‹frameset>: The &lt; frameset > element is used instead of the &lt; body > element, as this defines the rows and columns your page is divided into.
+ However, the frameset document uses the &lt;head> element. This sets framesets apart from all other web pages. ‹frameset> tag have the attributes 
+ like rows and cols to divide the window into rows and columns respectively.
+ 2. ‹frame>: Each frame is then represented by a &lt;frame › element. ‹frame> tag is contained within the &lt;frameset> element. The primary job of 
+ the &lt;frame>element is to specify which HTML document to display; however, you can control other features of a frame.
+ 3. «noframes»: The «noframes> element provides a message for users whose browsers do not support frames. Minimal content is there within 
+ the ‹noframes> element. It is similar to the alternative text provided in image elements.
+ To get a better idea of how frames work, here is the code for the frameset.
+
+ &lt;!DOCTYPE html>
+&lt;html lang="en">
+&lt;head>
+    &lt;meta charset="UTF-8">
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0">
+    &lt;title>HTML</title>
+&lt;/head>
+&lt;frameset rows="12%,*" border="1.5px">
+	&lt;frame src="taskbar.html" noresize="noresize">
+	&lt;frameset cols="15%,*" border="1.5px" name="main2">
+	&lt;frame src="links.html" noresize="noresize">
+	&lt;frame name="main" noresize="noresize">
+&lt;/frameset>
+&lt;/html>
+        </pre>
+    </div>
+</body>
+
+</html>
