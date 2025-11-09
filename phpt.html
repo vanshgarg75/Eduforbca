@@ -1,0 +1,1527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PHP </title>
+    <style>
+    * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary: #444;
+  --accent: #888;
+  --bg-light: #f5f5f5;
+  --bg-white: #ffffff;
+  --text-dark: #2c2c2c;
+  --text-muted: #666;
+  --border: #dcdcdc;
+  --shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+  --font-main: 'Poppins', 'Segoe UI', Arial, sans-serif;
+  --transition: all 0.3s ease;
+}
+
+body {
+  font-family: var(--font-main);
+  background: var(--bg-light);
+  color: var(--text-dark);
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+.main {
+  margin-left: 10px;
+  padding: 40px;
+  min-height: 100vh;
+  transition: var(--transition);
+}
+
+h1, h2, h3 {
+  color: var(--primary);
+  margin-bottom: 20px;
+  letter-spacing: 0.5px;
+}
+
+h1 {
+  font-size: 32px;
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 24px;
+  font-weight: 600;
+}
+
+h3 {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+pre {
+  background: var(--bg-white);
+  color: var(--text-dark);
+  padding: 16px;
+  border-left: 4px solid var(--accent);
+  border-radius: 8px;
+  overflow-x: auto;
+  font-family: 'Courier New', monospace;
+  box-shadow: var(--shadow);
+  margin-bottom: 20px;
+}
+
+.output-box {
+  background: #fafafa;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 15px;
+  margin-top: 10px;
+  margin-bottom: 30px;
+  box-shadow: var(--shadow);
+}
+
+.output-box h3 {
+  color: var(--primary);
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.output-box p {
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+@media screen and (max-width: 900px) {
+  .sidebar {
+    position: relative;
+    width: 100%;
+    height: auto;
+    padding: 20px;
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .main {
+    margin-left: 0;
+    padding: 20px;
+  }
+}
+
+
+    </style>
+</head>
+<body>
+    <!-- Main content -->
+    <div class="main">
+        <h1 id="webapp">Web Application</h1>
+     <p>→ A web site / web application / web portal is a collection:</p>
+            <ul>
+                <li>Web pages</li>
+                <li>Static files</li>
+                <li>Dynamic Files</li>
+                <li>Multimedia content</li>
+                <li>Database</li>
+            </ul>
+            <p>→ Web application is a folder / directory.</p>
+            <p>→ Can lie on a local or global network.</p>
+            <p>→ Web application if lies on a global network, then it is associated with a URL.</p>
+            <p>→ Web application runs on a Server-client environment.</p>
+
+
+        <h1 id="webpage">Webpage</h1>
+        <p>
+          <p>→ A web page is a single file of a web site.</p>
+<p>→ Can be made of:</p>
+<ul>
+    <li>Text</li>
+    <li>Multimedia content</li>
+    <li>HTML component</li>
+    <li>Hyperlinks</li>
+    <li>CSS content</li>
+    <li>JS content</li>
+</ul>
+        </p>
+
+        <h1 id="dynamicparts">Parts of a Dynamic Web Page</h1>
+<ul>
+    <li><strong>Designing</strong>
+        <ul>
+            <li>HTML, HTML5</li>
+            <li>CSS, CSS3</li>
+        </ul>
+    </li>
+    <li><strong>Scripting</strong>
+        <ul>
+            <li>Client-Side Scripting
+                <ul>
+                    <li>JavaScript</li>
+                    <li>TypeScript</li>
+                    <li>VBScript</li>
+                    <li>Angular</li>
+                    <li>React</li>
+                </ul>
+            </li>
+            <li>Server-Side Scripting
+                <ul>
+                    <li>PHP</li>
+                    <li>Servlets, JSP</li>
+                    <li>ASP.NET using C#.NET</li>
+                    <li>Node.JS</li>
+                    <li>Django using Python</li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+    <li><strong>Data Storage</strong>
+        <ul>
+            <li>XML</li>
+            <li>RDBMS
+                <ul>
+                    <li>MySQL</li>
+                    <li>SQL Server</li>
+                    <li>Oracle DB</li>
+                    <li>Postgres</li>
+                    <li>MS Access</li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+</ul>
+
+
+    <h1 id="clientsvr">Difference between Client-Side Scripting & Server-Side Scripting</h1>
+<table border="1" cellspacing="0" cellpadding="5">
+    <thead>
+        <tr>
+            <th>Client-Side Scripting</th>
+            <th>Server-Side Scripting</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>If the code to execute lies on the client side, then it is a client-side script.</td>
+            <td>If the code to execute lies on the server side, then it is a server-side script.</td>
+        </tr>
+        <tr>
+            <td>To execute this code, no post back is needed.</td>
+            <td>To execute this code, post back is needed.</td>
+        </tr>
+        <tr>
+            <td>Faster</td>
+            <td>Slower</td>
+        </tr>
+        <tr>
+            <td>This code is less secure as it is visible on the Page Source in the browser.</td>
+            <td>This code is more secure as it is not visible on the Page Source in the browser.</td>
+        </tr>
+        <tr>
+            <td>For example: typical use is form validation.</td>
+            <td>For example: database access like Signup.</td>
+        </tr>
+    </tbody>
+</table>
+
+
+
+        <h1 id="xampp">Installing XAMPP Server</h1>
+<ul>
+    <li>Open Source.</li>
+    <li>XAMPP server contains the following:
+        <ul>
+            <li>PHP Library</li>
+            <li>MySQL</li>
+            <li>Web Server – Apache HTTP Server</li>
+        </ul>
+    </li>
+    <li>Download from here: <a href="https://www.apachefriends.org/index.html" target="_blank">https://www.apachefriends.org/index.html</a></li>
+</ul>
+
+<h1 id="controlpanel">Running the XAMPP Control Panel</h1>
+<ul>
+    <li>Start all (Apache) services.</li>
+    <li>Wait till the Apache option turns green.</li>
+    <li>Test if the WebServer is working: Open Browser and go to <a href="http://127.0.0.1/" target="_blank">http://127.0.0.1/</a></li>
+    <li>If the above webpage opens, then we can start working on PHP.</li>
+</ul>
+<h1 id="websitefolder">Create a Web Site Folder inside XAMPP</h1>
+<ul>
+    <li>Open the XAMPP installation folder on your machine: <code>C:\xampp2</code> (on my machine)</li>
+    <li>Open the <strong>htdocs</strong> folder: This folder contains all website folders.</li>
+    <li>Create a new website folder inside the <strong>htdocs</strong> folder.</li>
+    <li>Note:
+        <ul>
+            <li>The name of the website = the name of the folder.</li>
+            <li>The name of the website is case sensitive. A ≠ a</li>
+        </ul>
+    </li>
+</ul>
+
+<h1 id="runwebsite">Run the Website on the Browser</h1>
+<ul>
+    <li>Write the following on the browser:
+        <ul>
+            <li><a href="http://127.0.0.1/WebsiteName" target="_blank">http://127.0.0.1/WebsiteName</a></li>
+            <li><a href="http://127.0.0.1/batch_4_30pm/" target="_blank">http://127.0.0.1/batch_4_30pm/</a></li>
+        </ul>
+    </li>
+    <li>If the above webpage is shown, then your website is working fine.</li>
+</ul>
+
+<h1 id="vscode">Install Visual Studio Code</h1>
+<ul>
+    <li>Download Visual Studio Code: <a href="https://code.visualstudio.com/download" target="_blank">https://code.visualstudio.com/download</a></li>
+    <li>After download, install Visual Studio Code. Normal Installation.</li>
+</ul>
+
+<h1 id="vscode">Opening the Website Folder in Visual Studio Code</h1>
+<ul>
+    <li>Open Visual Studio Code.</li>
+    <li>Open the Website folder in Visual Studio Code: <strong>File → Open Folder</strong>.</li>
+    <li>Choose the folder by specifying its location.</li>
+    <li>The folder should open in the Explorer panel.</li>
+    <li>To add a new PHP page inside the website folder, click on the <strong>New File</strong> icon and specify the file name with the <strong>.php</strong> extension.</li>
+</ul>
+
+
+        <h1 id="phpintro">PHP Scripplets & Displaying Messages</h1>
+        <pre>
+&lt;?php
+echo("Welcome to PHP");
+echo("&lt;br&gt;");
+echo "&lt;b&gt;&lt;u&gt;This is the second Line.&lt;/u&gt;&lt;/b&gt;";
+?&gt;
+        </pre>
+
+        <h1 id="basics">Basic Rules of PHP</h1>
+        <ul>
+            <li>Use .php extension</li>
+            <li>Apache must be running</li>
+            <li>PHP is case-sensitive</li>
+            <li>Statements end with ;</li>
+            <li>Use PHP scripplet &lt;?php ?&gt;</li>
+        </ul>
+
+        <h1 id="variables">Variables in PHP</h1>
+        <p>
+            Variables store temporary data. Syntax: <code>$variable_name = value;</code>
+            <br>Strings in quotes, numbers without quotes. Can change type dynamically.
+        </p>
+
+        <h1 id="forminput">Form User Input</h1>
+        <p>
+            Forms transfer data to PHP via <b>GET</b> or <b>POST</b>. GET is visible in URL, POST is hidden.
+        </p>
+
+        <!-- PHP Scripplets & Messages -->
+<h1 id="phpintro">PHP Scripplets & Messages</h1>
+<p>To add PHP code we need PHP Scripplets:</p>
+<pre><code>&lt;?php 
+    // PHP code 
+?&gt;
+</code></pre>
+
+<h2>Displaying Some Message in PHP</h2>
+<p>Syntax 1:</p>
+<pre><code>echo("Message");</code></pre>
+<p>Syntax 2:</p>
+<pre><code>echo "Message";</code></pre>
+<p>Note: HTML tags inside PHP must use echo():</p>
+<pre><code>echo("&lt;HTML_Tag&gt;&lt;/HTML_Tag&gt;");</code></pre>
+
+<h2>Example: first.php</h2>
+<pre><code>&lt;?php 
+    echo("Welcome to PHP"); 
+    echo("&lt;br&gt;"); 
+    echo "&lt;b&gt;&lt;u&gt;This is the second Line.&lt;/u&gt;&lt;/b&gt;"; 
+?&gt;</code></pre>
+
+<p>Run the PHP file in browser:</p>
+<a href="http://127.0.0.1/website_name/filename.php">http://127.0.0.1/website_name/filename.php</a>
+
+<!-- PHP Basics & Rules -->
+<h1 id="basics">PHP Basics & Rules</h1>
+<ul>
+    <li>Create a new file with the <strong>.php</strong> extension.</li>
+    <li>We can directly run .php files only if the Apache Web Server is running.</li>
+    <li>PHP is case sensitive.  A ≠ a</li>
+    <li>Most PHP statements are terminated using <code>;</code></li>
+    <li>Use PHP Scripplet to write PHP code:
+        <pre><code>&lt;?php 
+PHP script; 
+PHP script; 
+?&gt;</code></pre>
+    </li>
+    <li>Multiple PHP scripplets can be added in a page.</li>
+    <li>HTML tags cannot be used directly inside PHP; must use <code>echo()</code>.</li>
+    <li>Outside PHP Scripplets, HTML can be used normally.</li>
+</ul>
+
+<pre><code>&lt;?php 
+    echo("Welcome to PHP"); 
+    echo("&lt;br&gt;"); 
+    echo "&lt;b&gt;&lt;u&gt;This is the second Line.&lt;/u&gt;&lt;/b&gt;"; 
+?&gt;
+
+&lt;p align="center"&gt; 
+    This is a paragraph written outside the PHP Scripplet. 
+&lt;/p&gt;
+
+&lt;?php 
+    echo("Welcome to the 2nd PHP Scripplet."); 
+?&gt;
+</code></pre>
+
+<!-- PHP Comments -->
+<h2>Comments in PHP</h2>
+<p>Comments are used to explain code and are not executed.</p>
+<ul>
+    <li>Single Line: <code>// Comment</code></li>
+    <li>Multi Line: 
+        <pre><code>/*
+Comment
+Comment
+*/</code></pre>
+    </li>
+</ul>
+
+<!-- Variables in PHP -->
+<h1 id="variables">Variables in PHP</h1>
+<ul>
+    <li>A variable is a temporary memory block that stores a value.</li>
+    <li>No strong declaration needed; PHP decides data type automatically.</li>
+    <li>Syntax: <code>$variable_name = value;</code></li>
+    <li>Strings must be in double quotes; numbers need not.</li>
+    <li>Variable names can include a-z, A-Z, 0-9, and underscore <code>_</code>.</li>
+    <li>Display variable value: <code>echo($variable_name);</code></li>
+    <li>Display with message: <code>echo("Message " . $variable_name . " Message");</code></li>
+</ul>
+
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title>Variable Demo&lt;/title&gt;
+&lt;/head&gt;
+&lt;body style="background-color: aquamarine;"&gt;
+    &lt;h1&gt;Variable demo&lt;/h1&gt;
+    &lt;?php
+        // variable declarations
+        $name = "Jaiveer Vardhan";
+        $age = 27;
+
+        // display variable value
+        echo($name);
+        echo("&lt;br&gt;");
+        echo($age);
+
+        // display with message
+        echo("&lt;br&gt;Person's name is &lt;b&gt;&lt;i&gt;" . $name . "&lt;/i&gt;&lt;/b&gt;");
+        echo("&lt;br&gt;Person's Age is &lt;b&gt;&lt;i&gt;" . $age . "&lt;/i&gt;&lt;/b&gt; years");
+    ?&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<!-- Form Input -->
+<h1 id="forminput">Form User Input</h1>
+<p>Transferring form data from HTML page to PHP page:</p>
+<ul>
+    <li>Form attributes:
+        <ul>
+            <li>action: target page URL</li>
+            <li>method: GET / POST</li>
+        </ul>
+    </li>
+    <li>GET: Data visible in URL, less secure, faster.</li>
+    <li>POST: Data invisible, secure, slower.</li>
+    <li>Receive data:
+        <ul>
+            <li>GET: <code>$variable = $_GET["input_name"];</code></li>
+            <li>POST: <code>$variable = $_POST["input_name"];</code></li>
+        </ul>
+    </li>
+</ul>
+
+<h2>Example Form (myform1.html)</h2>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;My Form 1&lt;/title&gt;
+&lt;/head&gt;
+&lt;body style="background-color: cadetblue;"&gt;
+    &lt;h1&gt;My Form&lt;/h1&gt;
+    &lt;form action="3_form_input.php" method="GET"&gt;
+        &lt;label for="username"&gt;Enter Name:&lt;/label&gt;
+        &lt;input type="text" name="username" placeholder="First Middle Last"&gt;
+        &lt;br&gt;&lt;br&gt;
+        &lt;label for="useremail"&gt;Enter Email:&lt;/label&gt;
+        &lt;input type="email" name="useremail" placeholder="abc@example.com"&gt;
+        &lt;br&gt;&lt;br&gt;
+        &lt;input type="submit" name="btnsubmit" value="Send Form Data"&gt;
+    &lt;/form&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<h2>Receive Form Data in PHP (3_form_input.php)</h2>
+<pre><code>&lt;?php
+    $username = $_GET["username"];
+    $useremail = $_GET["useremail"];
+
+    echo("&lt;h2&gt;Name: " . $username . "&lt;/h2&gt;");
+    echo("&lt;h2&gt;Email: " . $useremail . "&lt;/h2&gt;");
+?&gt;
+</code></pre>
+
+<!-- Decision Control -->
+<h1 id="decisioncontrol">Decision Control</h1>
+<p>To choose which way to go based on a condition.</p>
+
+<h2>Syntax 1 – if else (single condition)</h2>
+<pre><code>if(condition) {
+    // code if true
+} else {
+    // code if false
+}</code></pre>
+
+<h2>Example 1: Voting Eligibility</h2>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;&lt;title&gt;if else 1&lt;/title&gt;&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;if else 1&lt;/h1&gt;
+    &lt;form action="ifelse1.php" method="post"&gt;
+        &lt;label for="txtage"&gt;Enter your age: &lt;/label&gt;
+        &lt;input type="number" min="0" max="100" name="txtage"&gt;&lt;br&gt;&lt;br&gt;
+        &lt;button type="submit" name="btnsub"&gt;Check Voting Eligibility&lt;/button&gt;
+    &lt;/form&gt;
+
+    &lt;?php
+        if(isset($_POST["btnsub"]) == true){
+            $age = $_POST["txtage"];
+            if($age >= 18){
+                echo("&lt;font size='6' color='green'&gt;Your Age is ".$age.". Can Vote&lt;/font&gt;");
+            } else {
+                echo("&lt;font size='6' color='red'&gt;Your Age is ".$age.". Cannot Vote&lt;/font&gt;");
+            }
+        }
+    ?&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<h2>Syntax 2 – if elseif else ladder (multiple conditions)</h2>
+<pre><code>if(condition1) {
+    ...
+} elseif(condition2) {
+    ...
+} else {
+    ...
+}</code></pre>
+
+<h2>Example 2: Check Number Sign</h2>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;&lt;title&gt;If elseif ladder&lt;/title&gt;&lt;/head&gt;
+&lt;body bgcolor="yellow"&gt;
+    &lt;h1&gt;If elseif ladder&lt;/h1&gt;
+    &lt;form action="ifelse2.php" method="GET"&gt;
+        &lt;label&gt;Enter Any Number:&lt;/label&gt;
+        &lt;input type="text" name="txtnum"&gt;&lt;br&gt;&lt;br&gt;
+        &lt;button type="submit" name="btnsub"&gt;Check if +ve, -ve or zero&lt;/button&gt;
+    &lt;/form&gt;
+
+    &lt;?php
+        if(isset($_GET["btnsub"]) == true){
+            $num = $_GET["txtnum"];
+            if($num > 0){
+                echo("&lt;h3&gt;Number ".$num." is POSITIVE.&lt;/h3&gt;");
+            } elseif($num < 0){
+                echo("&lt;h3&gt;Number ".$num." is NEGATIVE.&lt;/h3&gt;");
+            } elseif($num == 0){
+                echo("&lt;h3&gt;Number ".$num." is ZERO.&lt;/h3&gt;");
+            }
+        }
+    ?&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<!-- Loops Section -->
+<h1 id="loops">Loops in PHP</h1>
+<p>
+A loop is a cyclic repetition of a process that executes a specific task. The condition is checked:
+</p>
+<ul>
+    <li>If the condition is true, the loop iterates.</li>
+    <li>The loop keeps iterating until the condition becomes false.</li>
+    <li>When false, the loop stops and control is sent outside the loop.</li>
+</ul>
+
+<h2>Types of Loops in PHP</h2>
+<ol>
+    <li>while loop</li>
+    <li>do…while loop</li>
+    <li>for loop</li>
+    <li>foreach loop</li>
+</ol>
+
+<h2>While Loop Syntax</h2>
+<pre><code>initialize the loop_variable;
+while(condition) {
+    // Code
+    // Increment / Decrement the loop_variable
+}</code></pre>
+<p>
+<em>Notes:</em> loop_variable is a regular variable used to create the loop condition. Initialize it with a start value.
+</p>
+
+<h2>Do-While Loop Syntax</h2>
+<pre><code>initialize the loop_variable;
+do {
+    // Code
+    // Increment / Decrement the loop_variable
+} while(condition);</code></pre>
+
+<h2>For Loop Syntax</h2>
+<pre><code>for(initialization; condition; increment/decrement) {
+    // Code
+}</code></pre>
+
+<h2>While Loop Example</h2>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Loop - while&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Loop - while&lt;/h1&gt;
+    &lt;form action="loop_while_1.php" method="post"&gt;
+        &lt;label&gt;Enter some text:&lt;/label&gt;
+        &lt;input type="text" name="txttext"&gt;&lt;br&gt;&lt;br&gt;
+        &lt;label&gt;Enter No. of Repetitions:&lt;/label&gt;
+        &lt;input type="number" name="txtnum" min="1" max="10"&gt;&lt;br&gt;&lt;br&gt;
+        &lt;button type="submit" name="btnsub"&gt;Display Repetitions&lt;/button&gt;
+    &lt;/form&gt;
+
+    &lt;?php
+    if(isset($_POST["btnsub"]) == true) {
+        $text = $_POST["txttext"];
+        $num = $_POST["txtnum"];
+        echo("&lt;ol&gt;");
+        $i = 1;
+        while($i <= $num) {
+            echo("&lt;li&gt;".$text."&lt;/li&gt;");
+            $i = $i + 1;
+        }
+        echo("&lt;/ol&gt;");
+    }
+    ?&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<h2>Do-While Loop Example</h2>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Loop - do while&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Loop - do while&lt;/h1&gt;
+    &lt;form action="" method="post"&gt;
+        &lt;label&gt;Enter some text:&lt;/label&gt;
+        &lt;input type="text" name="txttext"&gt;&lt;br&gt;&lt;br&gt;
+        &lt;label&gt;Enter No. of Repetitions:&lt;/label&gt;
+        &lt;input type="number" name="txtnum" min="1" max="10"&gt;&lt;br&gt;&lt;br&gt;
+        &lt;button type="submit" name="btnsub"&gt;Display Repetitions&lt;/button&gt;
+    &lt;/form&gt;
+
+    &lt;?php
+    if(isset($_POST["btnsub"]) == true) {
+        $text = $_POST["txttext"];
+        $num = $_POST["txtnum"];
+        $i = 1;
+        do {
+            echo("&lt;div style='background-color: lime; border: 2px solid red; margin: 20px; padding: 20px;'&gt;");
+            echo($text);
+            echo("&lt;/div&gt;");
+            $i = $i + 1;
+        } while($i <= $num);
+    }
+    ?&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<h2>For Loop Example</h2>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Loop - for&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Loop - for&lt;/h1&gt;
+    &lt;form action="" method="post"&gt;
+        &lt;label&gt;Enter some text:&lt;/label&gt;
+        &lt;input type="text" name="txttext"&gt;&lt;br&gt;&lt;br&gt;
+        &lt;label&gt;Enter No. of Repetitions:&lt;/label&gt;
+        &lt;input type="number" name="txtnum" min="1" max="10"&gt;&lt;br&gt;&lt;br&gt;
+        &lt;button type="submit" name="btnsub"&gt;Display Repetitions&lt;/button&gt;
+    &lt;/form&gt;
+    &lt;br&gt;
+
+    &lt;?php
+    if(isset($_POST["btnsub"]) == true) {
+        $text = $_POST["txttext"];
+        $num = $_POST["txtnum"];
+        echo("&lt;table border='2'&gt;");
+        echo("&lt;tr&gt;&lt;th&gt;Message&lt;/th&gt;&lt;/tr&gt;");
+        for($i = 1; $i <= $num; $i++) {
+            echo("&lt;tr&gt;&lt;td&gt;".$text."&lt;/td&gt;&lt;/tr&gt;");
+        }
+        echo("&lt;/table&gt;");
+    }
+    ?&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<h1 id="arrays">Arrays</h1>
+<p>→ An array is a special variable.</p>
+<p>→ An array can store multiple values in a single variable.</p>
+<p>→ Three types of arrays:</p>
+<ul>
+    <li>Indexed array</li>
+    <li>Associative array</li>
+    <li>Multidimensional array</li>
+</ul>
+
+<h1 id="indexed-array">Indexed Array</h1>
+<p>→ Syntax for empty indexed array declaration:</p>
+<pre><code>$array_name = array();</code></pre>
+
+<p>→ Syntax to declare an indexed array with values:</p>
+<pre><code>$array_name = array(value1, value2, value3);</code></pre>
+
+<p>→ Every array element has a unique index: min index = 0 & max index = size – 1</p>
+<p>→ Access an array element using: <code>$array_name[index]</code></p>
+<p>→ Get the size of the array using: <code>count($array_name)</code></p>
+<p>→ Display the whole array using: <code>print_r($array_name)</code></p>
+
+<p>→ Access all array elements in a loop:</p>
+<pre><code>for($index_var = 0; $index_var < count($array_name); $index_var++) {
+    echo $array_name[$index_var];
+}</code></pre>
+
+<h1 id="indexed-array-ex1">Indexed Array Example 1</h1>
+<pre><code>&lt;?php
+// Declare an indexed array with values
+$cities = array("New Delhi", "Mumbai", "Chennai", "Kolkatta");
+
+// Get the array size
+echo("&lt;br&gt;Total Cities: " . count($cities));
+echo("&lt;br&gt;");
+
+// Display the whole array
+print_r($cities);
+
+// Access individual array elements
+echo("&lt;br&gt;City at index 0: " . $cities[0]);
+echo("&lt;br&gt;City at index 2: " . $cities[2]);
+
+// Access all elements using a loop
+echo("&lt;ul&gt;");
+for($i = 0; $i &lt; count($cities); $i++) {
+    echo("&lt;li&gt;".$cities[$i]."&lt;/li&gt;");
+}
+echo("&lt;/ul&gt;");
+?&gt;</code></pre>
+<h1 id="indexed-array-ex2">Indexed Array Example 2</h1> <p>→ Checkbox Multiple Item Selection using Indexed Arrays:</p> <pre><code>&lt;!DOCTYPE html&gt; &lt;html lang="en"&gt; &lt;head&gt; &lt;meta charset="UTF-8"&gt; &lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt; &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt; &lt;title&gt;Checkbox Selection&lt;/title&gt; &lt;/head&gt; &lt;body&gt; &lt;h1&gt;Checkbox Multiple Selection using arrays&lt;/h1&gt; &lt;form action="array_2.php" method="POST"&gt; &lt;label for="chklang"&gt;Select Languages Known:&lt;/label&gt; &lt;input type="checkbox" name="chklang[]" id="chklang[]" value="Hindi"&gt;Hindi &lt;input type="checkbox" name="chklang[]" id="chklang[]" value="Punjabi"&gt;Punjabi &lt;input type="checkbox" name="chklang[]" id="chklang[]" value="English"&gt;English &lt;input type="checkbox" name="chklang[]" id="chklang[]" value="French"&gt;French &lt;input type="checkbox" name="chklang[]" id="chklang[]" value="German"&gt;German &lt;br&gt;&lt;br&gt; &lt;button type="submit" name="btnsub" value="Select"&gt;Select&lt;/button&gt; &lt;/form&gt; &lt;?php if(isset($_POST["btnsub"])) { if(!isset($_POST["chklang"])) { echo "&lt;h3&gt;No Language is selected.&lt;/h3&gt;"; } else { $arrlangs = $_POST["chklang"]; echo "&lt;br&gt;Languages Known:"; echo "&lt;ul&gt;"; foreach($arrlangs as $lang) { echo "&lt;li&gt;" . $lang . "&lt;/li&gt;"; } echo "&lt;/ul&gt;"; } } ?&gt; &lt;/body&gt; &lt;/html&gt; </code></pre>
+<h1 id="functions">Functions</h1> <p>→ A function is a block of statements used to perform a specific task.</p> <ul> <li>Two types of functions: <ul> <li>Pre-defined / Built-in functions (e.g., <code>isset()</code>, <code>echo()</code>)</li> <li>User-defined functions</li> </ul> </li> <li>User-defined functions allow code reusability and better organization.</li> </ul> <h2 id="function-syntax">Function Definition & Call Syntax</h2> <ul> <li>Function Definition stores the code behind the function.</li> <li>Function Call executes the function definition.</li> <li>Arguments: inputs passed to the function.</li> <li>Return: output sent from the function.</li> <li>Types of User-defined Functions: <ul> <li>No Arguments – No Return</li> <li>Arguments – No Return</li> <li>Arguments – Return</li> <li>No Arguments – Return</li> </ul> </li> </ul> <pre><code>function FunctionName($arguments) { // code } FunctionName($arguments);</code></pre> <p><strong>Notes:</strong></p> <ul> <li>Arguments passed in function call must match the function definition.</li> <li>Use <code>return $varname;</code> to return a value.</li> <li>Only a single value can be returned.</li> <li>Catch the returned value in a variable.</li> </ul> <h2 id="function-example">Function Example</h2> <pre><code>&lt;?php // No Arguments – No Return function addition() { $n1 = $_POST["txtn1"]; $n2 = $_POST["txtn2"]; $n3 = $n1 + $n2; echo "&lt;br&gt;&lt;div style='color: green;'&gt;Addition of $n1 and $n2 is $n3&lt;/div&gt;"; } // Arguments – No Return function subtraction($n1, $n2) { $n3 = $n1 - $n2; echo "&lt;br&gt;&lt;div style='color: green;'&gt;Subtraction of $n1 and $n2 is $n3&lt;/div&gt;"; } // Arguments – Return function multiplication($n1, $n2) { return $n1 * $n2; } // No Arguments – Return function division() { $n1 = $_POST["txtn1"]; $n2 = $_POST["txtn2"]; return $n1 / $n2; } ?&gt;</code></pre> <pre><code>&lt;!DOCTYPE html&gt; &lt;html lang="en"&gt; &lt;body&gt; &lt;form action="functions_1.php" method="POST"&gt; &lt;label&gt;Enter 1st Number:&lt;/label&gt; &lt;input type="text" name="txtn1"&gt; &lt;br&gt;&lt;br&gt; &lt;label&gt;Enter 2nd Number:&lt;/label&gt; &lt;input type="text" name="txtn2"&gt; &lt;br&gt;&lt;br&gt; &lt;button type="submit" name="btnadd"&gt;Add (No arguments – No return)&lt;/button&gt; &lt;button type="submit" name="btnsub"&gt;Subtract (Arguments – No return)&lt;/button&gt; &lt;button type="submit" name="btnmul"&gt;Multiply (Arguments – Return)&lt;/button&gt; &lt;button type="submit" name="btndiv"&gt;Divide (No arguments – Return)&lt;/button&gt; &lt;/form&gt; &lt;?php if(isset($_POST["txtn1"]) && isset($_POST["txtn2"])) { $a = $_POST["txtn1"]; $b = $_POST["txtn2"]; if(isset($_POST["btnadd"])) { addition(); } elseif(isset($_POST["btnsub"])) { subtraction($a, $b); } elseif(isset($_POST["btnmul"])) { $c = multiplication($a, $b); echo "&lt;br&gt;&lt;div style='color: green;'&gt;Multiplication of $a and $b is $c&lt;/div&gt;"; } elseif(isset($_POST["btndiv"])) { $c = division(); echo "&lt;br&gt;&lt;div style='color: green;'&gt;Division of $a and $b is $c&lt;/div&gt;"; } } ?&gt; &lt;/body&gt; &lt;/html&gt;</code></pre>
+<h1 id="include-require">include() & require()</h1> <p><strong>include():</strong></p> <ul> <li>Used to include the data of one PHP file into another.</li> <li>Helps in reusing classes, functions, and designs.</li> <li>Syntax: <code>include("Source_file.php");</code></li> <li>Warning is produced on error, but script execution continues.</li> </ul> <p><strong>require():</strong></p> <ul> <li>Similar to <code>include()</code>, but stops script execution on error.</li> <li>Syntax: <code>require("Source_file.php");</code></li> </ul>
+<h1>Using PHP Classes</h1>
+<form action="" method="post">
+    <label for="txtempid">Enter Employee ID:</label>
+    <input type="text" name="txtempid" id="txtempid"><br>
+
+    <label for="txtempname">Enter Employee Name:</label>
+    <input type="text" name="txtempname" id="txtempname"><br>
+
+    <label for="txtbsal">Enter Employee Basic Salary:</label>
+    <input type="text" name="txtbsal" id="txtbsal"><br>
+
+    <input type="submit" value="Add Employee" name="btnsub" id="btnsub">
+</form>
+
+<?php
+if(isset($_POST['btnsub'])) {
+    // Receive form data
+    $id = $_POST['txtempid'];
+    $nm = $_POST['txtempname'];
+    $bs = $_POST['txtbsal'];
+
+    // Include Employee class
+    require('Employee.php');
+
+    // Create object
+    $e1 = new Employee();
+
+    // Call member functions
+    $e1->set_data($id, $nm, $bs);
+    $e1->calculate();
+
+    // Display results
+    echo("<br>Employee ITR: Rs. " . $e1->getItr());
+    echo("<br>Employee HRA: Rs. " . $e1->getHra());
+    echo("<br>Employee GSal: Rs. " . $e1->getGsal());
+}
+?>
+<h1 id="classes-objects">Classes and Objects in PHP</h1>
+
+            <p>Rules:</p>
+            <ul>
+                <li>&rarr; class is a keyword.</li>
+                <li>&rarr; ClassName, property_name & member_function_name are identifiers.</li>
+                <li>&rarr; access_specifiers control security of members:
+                    <ul>
+                        <li>private → only inside class</li>
+                        <li>protected → inside class + derived class</li>
+                        <li>public → inside + outside class</li>
+                    </ul>
+                </li>
+                <li>&rarr; Access member from inside function: <code>$this-&gt;member_name</code></li>
+            </ul>
+
+            <p>Object Declaration Syntax:</p>
+            <pre>$object_name = new ClassName();</pre>
+
+            <p>Access members via object:</p>
+            <pre>$object_name-&gt;member_name;</pre>
+            <pre>$object_name-&gt;member_function($args);</pre>
+
+            <h2>Example 1</h2>
+            <pre>&lt;?php 
+//class definition 
+class Employee { 
+    //data members 
+    private $empid; 
+    private $empname; 
+    private $bsal; 
+    private $itr; 
+    private $hra; 
+    private $gsal; 
+    //member functions 
+    public function set_data($id, $nm, $bs) { 
+        $this-&gt;empid = $id; 
+        $this-&gt;empname = $nm; 
+        $this-&gt;bsal = $bs; 
+    } 
+    public function calculate() { 
+        $this-&gt;itr = $this-&gt;bsal * 30.0/100.0; 
+        $this-&gt;hra = $this-&gt;bsal * 40.0/100.0; 
+        $this-&gt;gsal = $this-&gt;bsal + $this-&gt;hra - $this-&gt;itr; 
+    } 
+    public function getItr() { return $this-&gt;itr; } 
+    public function getHra() { return $this-&gt;hra; } 
+    public function getGsal() { return $this-&gt;gsal; } 
+} 
+?&gt;</pre>
+
+            <pre>&lt;?php  
+include('Employee.php'); 
+?&gt;</pre>
+
+            <pre>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;body&gt;
+&lt;form action="using_class_1.php" method="post"&gt;
+    &lt;label for="txtempid"&gt;Enter Employee ID:&lt;/label&gt;
+    &lt;input type="text" name="txtempid" id="txtempid"&gt;&lt;br&gt;
+    &lt;label for="txtempname"&gt;Enter Employee Name:&lt;/label&gt;
+    &lt;input type="text" name="txtempname" id="txtempname"&gt;&lt;br&gt;
+    &lt;label for="txtbsal"&gt;Enter Employee Basic Salary:&lt;/label&gt;
+    &lt;input type="text" name="txtbsal" id="txtbsal"&gt;&lt;br&gt;
+    &lt;input type="submit" value="Add Employee" name="btnsub" id="btnsub"&gt;
+&lt;/form&gt;
+
+&lt;?php
+if(isset($_POST['btnsub']) == true) { 
+    $id = $_POST['txtempid']; 
+    $nm = $_POST['txtempname']; 
+    $bs = $_POST['txtbsal']; 
+    $e1 = new Employee($id, $nm, $bs); // __construct() with arguments
+    $e1-&gt;calculate(); 
+    echo("&lt;br&gt;Employee ITR: Rs. " . $e1-&gt;getItr()); 
+    echo("&lt;br&gt;Employee HRA: Rs. " . $e1-&gt;getHra()); 
+    echo("&lt;br&gt;Employee GSal: Rs. " . $e1-&gt;getGsal()); 
+} 
+?&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+
+            <h2 id="construct">The __construct function</h2>
+            <p>→ Special function called automatically when an object is created.</p>
+            <ul>
+                <li>Name fixed: <code>__construct()</code></li>
+                <li>May / may not take arguments</li>
+                <li>Cannot return a value</li>
+                <li>Only one constructor allowed per class</li>
+                <li>Can pass arguments to set data while creating object</li>
+            </ul>
+             <h1 id="inheritance">Inheritance in PHP</h1>
+            
+            <p>&rarr; Inheritance is creating a new class and deriving properties from a previously created class.</p>
+            
+            <p><b>Benefits:</b></p>
+            <ul>
+                <li>Reusability of code</li>
+                <li>Reduces code size, effort, time, and complexity</li>
+            </ul>
+
+            <p><b>Types of Inheritance:</b></p>
+            <ol>
+                <li>Single Level</li>
+                <li>Multi-Level</li>
+                <li>Hierarchical</li>
+            </ol>
+
+            <h2>Single Level Inheritance</h2>
+            <pre>class SuperClass { } 
+class SubClass extends SuperClass { }</pre>
+            <p>Notes:</p>
+            <ul>
+                <li>Private members of SuperClass cannot be accessed in SubClass</li>
+                <li>Protected members accessible in SubClass but not outside</li>
+                <li>Public members accessible in SubClass</li>
+            </ul>
+
+            <h2>Multi-Level Inheritance</h2>
+            <pre>class SuperClass { } 
+class IntermediateSuperClass extends SuperClass { } 
+class SubClass extends IntermediateSuperClass { }</pre>
+
+            <h2>Hierarchical Inheritance</h2>
+            <pre>class SuperClass { } 
+class SubClass1 extends SuperClass { } 
+class SubClass2 extends SuperClass { }</pre>
+
+            <p>Note: PHP does not support multiple inheritance directly:</p>
+            <pre>class SubClass extends SuperClass1, SuperClass2 { }</pre>
+
+            <h2>Example</h2>
+            <pre>&lt;?php
+class Product {
+    protected $id;
+    protected $name;
+    protected $brand;
+    protected $price;
+
+    public function setProduct($id, $name, $brand, $price) {
+        $this-&gt;id = $id;
+        $this-&gt;name = $name;
+        $this-&gt;brand = $brand;
+        $this-&gt;price = $price;
+    }
+
+    public function getId() { return $this-&gt;id; }
+    public function getName() { return $this-&gt;name; }
+    public function getBrand() { return $this-&gt;brand; }
+    public function getPrice() { return $this-&gt;price; }
+}
+?&gt;</pre>
+
+            <pre>&lt;?php
+require('MyProduct.php');
+
+class Mobile extends Product {
+    private $intMem;
+    private $ram;
+    private $os;
+
+    public function setMobile($intMem, $ram, $os) {
+        $this-&gt;intMem = $intMem;
+        $this-&gt;ram = $ram;
+        $this-&gt;os = $os;
+    }
+
+    public function getIntMem() { return $this-&gt;intMem; }
+    public function getRam() { return $this-&gt;ram; }
+    public function getOs() { return $this-&gt;os; }
+}
+?&gt;</pre>
+
+            <pre>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;body&gt;
+&lt;form action="" method="post"&gt;
+    &lt;h1&gt;Mobile&lt;/h1&gt;
+    Enter Product ID:- &lt;input type="text" name="id"&gt;&lt;br&gt;
+    Enter Product Name:- &lt;input type="text" name="name"&gt;&lt;br&gt;
+    Enter Product Brand:- &lt;input type="text" name="brand"&gt;&lt;br&gt;
+    Enter Product Price:- &lt;input type="text" name="price"&gt;&lt;br&gt;
+    Enter Internal Memory:- &lt;input type="text" name="intmry"&gt;&lt;br&gt;
+    Enter RAM:- &lt;input type="text" name="ram"&gt;&lt;br&gt;
+    Enter Operating System (OS):- &lt;input type="text" name="os"&gt;&lt;br&gt;
+    &lt;button type="submit" name="button"&gt;Submit&lt;/button&gt;
+&lt;/form&gt;
+
+&lt;?php
+if(isset($_POST["button"])) {
+    $m1 = new Mobile();
+    $m1-&gt;setProduct($_POST["id"], $_POST["name"], $_POST["brand"], $_POST["price"]);
+    $m1-&gt;setMobile($_POST["intmry"], $_POST["ram"], $_POST["os"]);
+
+    echo("Mobile Details:&lt;br/&gt;");
+    echo("Product ID: ".$m1-&gt;getId()."&lt;br/&gt;");
+    echo("Product Name: ".$m1-&gt;getName()."&lt;br/&gt;");
+    echo("Product Brand: ".$m1-&gt;getBrand()."&lt;br/&gt;");
+    echo("Product Price: Rs. ".$m1-&gt;getPrice()."&lt;br/&gt;");
+    echo("Internal Memory: ".$m1-&gt;getIntMem()."&lt;br/&gt;");
+    echo("RAM: ".$m1-&gt;getRam()."&lt;br/&gt;");
+    echo("OS: ".$m1-&gt;getOs()."&lt;br/&gt;");
+}
+?&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+
+<h1 id="php-mysql">PHP MySQL Database Connectivity</h1>
+<ul>
+    <li>&rarr; We can store data received from the user to a MySQL database for permanent storage.</li>
+    <li>&rarr; PHP can connect with any RDBMS like MySQL, Microsoft SQL Server, Oracle DB, etc.</li>
+    <li>&rarr; Database Connectivity cases:
+        <ul>
+            <li>Executing a DML statement (INSERT, UPDATE, DELETE)</li>
+            <li>Executing a SELECT statement to fetch single/multiple rows</li>
+            <li>Executing a SELECT statement for record existence verification</li>
+        </ul>
+    </li>
+</ul>
+
+<h2>Case 1: Executing a DML Statement (INSERT, UPDATE, DELETE)</h2>
+<pre>
+&lt;?php
+$connection_object = mysqli_connect(
+    "ServerName",
+    "DB UserName",
+    "DB Password",
+    "DataBase name",
+    "port number"
+);
+
+if(mysqli_connect_errno() == true) {
+    die("Message");
+}
+
+$query = "INSERT INTO userinfo (username, password, fullname, gender, dob) 
+          VALUES('$unm','$pass','$fnm','$gen','$dob');";
+
+if(mysqli_query($connection_object, $query) == false) {
+    die("Query Incorrect!");
+} else {
+    echo("Query Correct.");
+}
+
+$rows_affected_var = mysqli_affected_rows($connection_object);
+mysqli_close($connection_object);
+?&gt;
+</pre>
+
+<h2>Case 2: SELECT to Display Data</h2>
+<pre>
+&lt;?php
+$con = mysqli_connect("localhost", "root", "nict", "phpdb", "3309");
+if(mysqli_connect_errno() == true) { die("Unable to establish the connection."); }
+
+$query = "SELECT username, fullname, dob FROM userinfo;";
+$resultset = mysqli_query($con, $query);
+
+while(($row = mysqli_fetch_array($resultset, MYSQLI_ASSOC)) != null) {
+    echo "Username: ".$row['username']." Fullname: ".$row['fullname']." DOB: ".$row['dob']."&lt;br&gt;";
+}
+
+mysqli_close($con);
+?&gt;
+</pre>
+
+<h2>Case 3: Record Existence Verification</h2>
+<pre>
+&lt;?php
+if(isset($_POST['btnverify'])) {
+    $username = $_POST['txtusername'];
+    $password = $_POST['txtpassword'];
+
+    $con = mysqli_connect("localhost", "root", "nict", "phpdb", "3309");
+    if(mysqli_connect_errno() == true) { die("Unable to establish the connection."); }
+
+    $query = "SELECT * FROM userinfo WHERE password='$password' AND username='$username';";
+    $resultset = mysqli_query($con, $query);
+    $numrows = mysqli_num_rows($resultset);
+
+    if($numrows &gt; 0) {
+        echo("Username and password correct!");
+    } else {
+        echo("Invalid Username or password!");
+    }
+
+    mysqli_close($con);
+}
+?&gt;
+</pre>
+
+<h2>Case 4: Search and Retrieve (SELECT)</h2>
+<pre>
+&lt;?php
+if(isset($_POST['btnsearch'])) {
+    $txtusername = $_POST['txtusername'];
+    $con = mysqli_connect("localhost", "root", "nict", "phpdb", "3309");
+    if(mysqli_connect_errno() == true) { die("Connection Failed!"); }
+
+    $query = "SELECT fullname, gender, dob FROM userinfo WHERE username='$txtusername';";
+    $resultset = mysqli_query($con, $query);
+    $numrows = mysqli_num_rows($resultset);
+
+    if($numrows &gt; 0) {
+        while(($row = mysqli_fetch_array($resultset, MYSQLI_ASSOC)) != null) {
+            $fullname = $row['fullname'];
+            $gender = $row['gender'];
+            $dob = $row['dob'];
+            echo "Username: $txtusername &lt;br&gt; Fullname: $fullname &lt;br&gt; Gender: $gender &lt;br&gt; DOB: $dob";
+        }
+    } else {
+        echo "Invalid username $txtusername";
+    }
+
+    mysqli_close($con);
+}
+?&gt;
+</pre>
+
+<h1 id="state-management">State Management</h1>
+<ul>
+    <li>&rarr; By default, data of a page is not sharable across pages.</li>
+    <li>&rarr; State management helps share data across pages without forms.</li>
+    <li>&rarr; Technologies: Query String, Sessions, Cookies</li>
+</ul>
+
+<h2>Query String</h2>
+<ul>
+    <li>Transports limited string data from source page to target page</li>
+    <li>Type &amp; quantity: Strings up to 4kb</li>
+    <li>Storage: Client Browser's address bar</li>
+    <li>Security: Insecure</li>
+    <li>Scope: Available till target page runs</li>
+    <li>Syntax (single): TargetPageURL?key=value</li>
+    <li>Syntax (multiple): TargetPageURL?key1=value1&amp;key2=value2</li>
+    <li>Retrieve in target page: $var = $_GET["key"];</li>
+</ul>
+<h1 id="sessions">Sessions</h1>
+<ul>
+    <li>&rarr; PHP Sessions are used to store and pass information from one page to another temporarily.</li>
+    <li>&rarr; Sessions are widely used for sign in and shopping carts.</li>
+    <li>&rarr; Session is browser-specific; every browser gets a unique session id.</li>
+    <li>&rarr; Properties of Sessions:
+        <ul>
+            <li>Type &amp; Quantity: Any data type and any size</li>
+            <li>Storage Location: Server’s temporary memory</li>
+            <li>Security: Secure</li>
+            <li>Scope: Accessible throughout the website</li>
+            <li>Life: Available only while the session is alive</li>
+        </ul>
+    </li>
+    <li>&rarr; Session destruction cases:
+        <ul>
+            <li>User initiated (logout)</li>
+            <li>Browser session ends</li>
+        </ul>
+    </li>
+</ul>
+
+<h2>Sessions Syntax</h2>
+<ul>
+    <li>Start session at the top of every PHP file: <code>session_start();</code></li>
+    <li>Create/assign session data: <code>$_SESSION["session_key"] = value;</code></li>
+    <li>Retrieve session data: <code>$var = $_SESSION["session_key"];</code></li>
+    <li>Destroy session:
+        <pre>
+// remove all session variables
+session_unset();
+// destroy the session
+session_destroy();
+        </pre>
+    </li>
+</ul>
+
+<h2>Example: session1.php</h2>
+<pre>
+&lt;?php
+session_start();
+?&gt;
+
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Session 1&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Session 1&lt;/h1&gt;
+    &lt;form action="session1.php" method="post"&gt;
+        &lt;input type="text" name="txtname" placeholder="John Doe"&gt;
+        &lt;input type="email" name="txtemail" placeholder="name@example.com"&gt;
+        &lt;button type="submit" name="btnsub"&gt;Create Session&lt;/button&gt;
+    &lt;/form&gt;
+
+    &lt;?php
+    if(isset($_POST["btnsub"])) {
+        $_SESSION["key_name"] = $_POST["txtname"];
+        $_SESSION["key_email"] = $_POST["txtemail"];
+        echo "Data Stored in session.";
+    }
+    ?&gt;
+
+    &lt;a href="session2.php"&gt;Open Session 2&lt;/a&gt; | &lt;a href="session3.php"&gt;Open Session 3&lt;/a&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+
+<h2>Example: session2.php</h2>
+<pre>
+&lt;?php session_start(); ?&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;body&gt;
+    &lt;h1&gt;Session 2&lt;/h1&gt;
+    &lt;?php
+        $name = $_SESSION["key_name"];
+        $email = $_SESSION["key_email"];
+        echo "&lt;h3&gt;Name: $name&lt;/h3&gt;";
+        echo "&lt;h3&gt;Email: $email&lt;/h3&gt;";
+    ?&gt;
+    &lt;a href="session3.php"&gt;Open Session 3&lt;/a&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+
+<h2>Example: session3.php</h2>
+<pre>
+&lt;?php session_start(); ?&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;body&gt;
+    &lt;h1&gt;Session 3&lt;/h1&gt;
+    &lt;?php
+        $name = $_SESSION["key_name"];
+        $email = $_SESSION["key_email"];
+        echo "&lt;h3&gt;Name: $name&lt;/h3&gt;";
+        echo "&lt;h3&gt;Email: $email&lt;/h3&gt;";
+    ?&gt;
+
+    &lt;form action="session3.php" method="post"&gt;
+        &lt;button type="submit" name="btndestoy"&gt;Destroy Session&lt;/button&gt;
+    &lt;/form&gt;
+
+    &lt;?php
+    if(isset($_POST["btndestoy"])) {
+        session_unset();
+        session_destroy();
+        header("Location: session1.php");
+        exit();
+    }
+    ?&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+<li><a href="#cookies">Cookies</a></li>
+<li><a href="#interfaces">Interfaces</a></li>
+
+<h1 id="cookies">Cookies</h1>
+<ul>
+    <li>&rarr; Cookie is a global data store for your web application.</li>
+    <li>&rarr; Cookies are often used to identify a user.</li>
+    <li>&rarr; A cookie is a small file stored on the client’s computer by the server.</li>
+    <li>&rarr; Typically used for “remember me” or “stay signed in” functionality.</li>
+    <li>&rarr; Properties of Cookies:
+        <ul>
+            <li>Type &amp; Quantity: Strings only, limited size (1KB-4KB)</li>
+            <li>Storage Location: Client browser cache</li>
+            <li>Security: Insecure</li>
+            <li>Scope: Accessible throughout the website</li>
+            <li>Life: Available until cookie expires</li>
+        </ul>
+    </li>
+    <li>&rarr; Cookie destruction:
+        <ul>
+            <li>Using browser settings</li>
+            <li>Cookie timeout</li>
+        </ul>
+    </li>
+</ul>
+
+<h2>Cookie Syntax</h2>
+<ul>
+    <li>Create cookie: <code>setcookie("cookie_name", "cookie_value", timeout);</code></li>
+    <li>Timeout example: 
+        <ul>
+            <li>5 minutes: <code>time() + 5*60</code></li>
+            <li>1 hour: <code>time() + 1*60*60</code></li>
+            <li>15 days: <code>time() + 15*24*60*60</code></li>
+        </ul>
+    </li>
+    <li>Retrieve cookie: <code>$_COOKIE["cookie_name"]</code></li>
+</ul>
+
+<h2>Example: cookie1.php</h2>
+<pre>
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Cookie 1&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Cookie 1&lt;/h1&gt;
+    &lt;form action="cookie1.php" method="post"&gt;
+        &lt;input type="text" name="txtname" placeholder="John Doe"&gt;
+        &lt;input type="email" name="txtemail" placeholder="name@example.com"&gt;
+        &lt;button type="submit" name="btnsub"&gt;Create Cookie&lt;/button&gt;
+    &lt;/form&gt;
+
+    &lt;?php
+    if(isset($_POST["btnsub"])) {
+        $name = $_POST["txtname"];
+        $email = $_POST["txtemail"];
+        setcookie("cookie_name", $name, time() + 3*60);
+        setcookie("cookie_email", $email, time() + 3*60);
+        echo "&lt;br/&gt;Data Stored in cookie.";
+    }
+    ?&gt;
+
+    &lt;a href="cookie2.php"&gt;Open Cookie 2&lt;/a&gt; | &lt;a href="cookie3.php"&gt;Open Cookie 3&lt;/a&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+
+<h1 id="interfaces">Interfaces</h1>
+<ul>
+    <li>&rarr; Interface is a class-like entity.</li>
+    <li>&rarr; We define interfaces like classes using the <code>interface</code> keyword.</li>
+    <li>&rarr; Interfaces cannot have properties; only public member methods can be declared.</li>
+    <li>&rarr; Interfaces cannot be instantiated.</li>
+    <li>&rarr; A class inherits an interface using <code>implements</code> and must define all interface methods.</li>
+</ul>
+
+<h2>Interface Syntax</h2>
+<pre>
+interface InterfaceName {
+    public function function_name($arguments);
+}
+
+class ClassName implements InterfaceName {
+    public function function_name($arguments) {
+        // method body
+    }
+}
+</pre>
+
+<h2>Example: IFace1</h2>
+<pre>
+&lt;?php
+interface IFace1 {
+    public function fun1();
+}
+
+class MyClass implements IFace1 {
+    public function fun1() {
+        echo "&lt;br/&gt;fun1() runs.";
+    }
+}
+
+$obj = new MyClass();
+$obj-&gt;fun1();
+?&gt;
+</pre>
+
+<h2>Example: iuser.php</h2>
+<pre>
+&lt;?php
+interface iuser {
+    public function setEmail($email);
+    public function setPass($pass);
+    public function setFullname($fullname);
+    public function setPhone($phone);
+    public function setDob($dob);
+    public function getEmail();
+    public function getPass();
+    public function getFullname();
+    public function getPhone();
+    public function getDob();
+    public function checkPasswords($repass);
+    public function signup();
+    public function change_password($email, $current_pass, $new_pass);
+    public function signin();
+    public function generate_user_list();
+    public function generate_user_detail($email);
+    public function createCSVFromDB();
+}
+?&gt;
+</pre>
+<li><a href="#abstract-polymorphism">Abstract Classes &amp; Polymorphism</a></li>
+
+<h1 id="abstract-polymorphism">Abstract Classes &amp; Polymorphism</h1>
+
+<h2>Abstract Member Functions</h2>
+<ul>
+    <li>&rarr; Abstract member functions are special functions declared in the parent class only.</li>
+    <li>&rarr; They cannot be defined in the parent class.</li>
+    <li>&rarr; Must be prefixed with <code>abstract</code> keyword.</li>
+    <li>&rarr; Can be <code>public</code> or <code>protected</code>.</li>
+    <li>&rarr; Syntax: <code>abstract access_specifier function member_function_name($args);</code></li>
+    <li>&rarr; All derived classes must define these functions with the same signature.</li>
+</ul>
+
+<h2>Abstract Class</h2>
+<ul>
+    <li>&rarr; Abstract class is a parent class containing at least one abstract member function.</li>
+    <li>&rarr; Declared with <code>abstract</code> keyword.</li>
+    <li>&rarr; Cannot create an object of abstract class directly.</li>
+    <li>&rarr; Can contain properties and regular member functions.</li>
+</ul>
+
+<h2>Example: Employee Abstract Class</h2>
+<pre>
+&lt;?php
+abstract class Employee {
+    public $empid;
+    public $empname;
+    public $workinghours;
+    public $workingdays;
+
+    public function setEmpData($empid, $empname, $workinghours, $workingdays) {
+        $this-&gt;empid = $empid;
+        $this-&gt;empname = $empname;
+        $this-&gt;workinghours = $workinghours;
+        $this-&gt;workingdays = $workingdays;
+    }
+
+    abstract public function calculateSalary();
+}
+?&gt;
+</pre>
+
+<h2>Derived Classes</h2>
+<pre>
+&lt;?php
+require_once("Employee.php");
+
+class PermanentEmployee extends Employee {
+    public function calculateSalary() {
+        return $this-&gt;workinghours * 100 * $this-&gt;workingdays + 10000;
+    }
+}
+
+class TemporaryEmployee extends Employee {
+    public function calculateSalary() {
+        return $this-&gt;workinghours * 50 * $this-&gt;workingdays;
+    }
+}
+?&gt;
+</pre>
+
+<h2>Abstract Demo: abstract_demo.php</h2>
+<pre>
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+&lt;title&gt;Abstract Demo&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;?php
+require_once("controller/PermanentEmployee.php");
+require_once("controller/TemporaryEmployee.php");
+
+// form handling and calculation logic
+?&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+
+<h2>Polymorphism</h2>
+<ul>
+    <li>&rarr; Poly – many, Morph – forms.</li>
+    <li>&rarr; Allows objects of different classes to have same signature methods.</li>
+    <li>&rarr; Implemented via:
+        <ul>
+            <li>Abstract Classes</li>
+            <li>Interfaces</li>
+        </ul>
+    </li>
+</ul>
+
+<h2>Polymorphism using Abstract Class</h2>
+<pre>
+&lt;?php
+abstract class Person {
+    abstract public function greet();
+}
+
+class English extends Person {
+    public function greet() { return "Hello!"; }
+}
+
+class German extends Person {
+    public function greet() { return "Hallo!"; }
+}
+
+class French extends Person {
+    public function greet() { return "Bonjour!"; }
+}
+
+// usage
+$person_eng = new English();
+echo "&lt;br/&gt;English Person says: ".$person_eng-&gt;greet();
+?&gt;
+</pre>
+
+<h2>Polymorphism using Interface</h2>
+<pre>
+&lt;?php
+interface Greeting {
+    public function greet();
+}
+
+class English implements Greeting {
+    public function greet() { return "Hello!"; }
+}
+
+class German implements Greeting {
+    public function greet() { return "Hallo!"; }
+}
+
+class French implements Greeting {
+    public function greet() { return "Bonjour!"; }
+}
+
+// usage
+$person_eng = new English();
+echo "&lt;br/&gt;English Person says: ".$person_eng-&gt;greet();
+?&gt;
+</pre>
+
+
+        <!-- Continue adding more content sections here as needed -->
+    </div>
+https://drive.google.com/file/d/1jGQcknrtGoU252TxguPfrN7rg4hE78P8/view?usp=sharing
+
+</body>
+</html>
